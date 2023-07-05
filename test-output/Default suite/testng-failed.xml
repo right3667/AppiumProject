@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch">
+        <methods>
+          <include name="A04_T03"/>
+          <include name="A09_T05"/>
+          <include name="A10_T05"/>
+          <include name="A08_T05"/>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+          <include name="A06_T06"/>
+          <include name="A07_T05"/>
+        </methods>
+      </class> <!-- eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

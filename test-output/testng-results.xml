@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="38" passed="32" failed="6" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-07-04T17:33:59 KST" name="Default suite" finished-at="2023-07-04T18:35:28 KST" duration-ms="3689380">
+    <groups>
+    </groups>
+    <test started-at="2023-07-04T17:33:59 KST" name="Default test" finished-at="2023-07-04T18:35:28 KST" duration-ms="3689380">
+      <class name="eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T17:33:59 KST" name="beforeTest" finished-at="2023-07-04T17:34:06 KST" duration-ms="7949" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="A01_T01()[pri:0, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T17:34:06 KST" name="A01_T01" finished-at="2023-07-04T17:34:13 KST" duration-ms="6662" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A01_T01 -->
+        <test-method signature="A02_T01()[pri:1, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T17:34:13 KST" name="A02_T01" finished-at="2023-07-04T17:34:31 KST" duration-ms="18046" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A02_T01 -->
+        <test-method signature="A02_T02()[pri:2, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T17:34:31 KST" name="A02_T02" finished-at="2023-07-04T17:36:49 KST" duration-ms="137621" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A02_T02 -->
+        <test-method signature="A02_T03()[pri:3, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T17:36:49 KST" name="A02_T03" finished-at="2023-07-04T17:38:12 KST" duration-ms="83467" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A02_T03 -->
+        <test-method signature="A03_T01()[pri:4, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T17:38:12 KST" name="A03_T01" finished-at="2023-07-04T17:38:49 KST" duration-ms="36556" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A03_T01 -->
+        <test-method signature="A03_T02()[pri:5, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T17:38:49 KST" name="A03_T02" finished-at="2023-07-04T17:39:32 KST" duration-ms="43441" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A03_T02 -->
+        <test-method signature="A03_T03()[pri:6, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T17:39:32 KST" name="A03_T03" finished-at="2023-07-04T17:40:34 KST" duration-ms="61576" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A03_T03 -->
+        <test-method signature="A04_T01()[pri:6, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T17:40:34 KST" name="A04_T01" finished-at="2023-07-04T17:42:01 KST" duration-ms="87155" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A04_T01 -->
+        <test-method signature="A04_T02()[pri:7, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T17:42:01 KST" name="A04_T02" finished-at="2023-07-04T17:43:00 KST" duration-ms="58928" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A04_T02 -->
+        <test-method signature="A04_T03()[pri:8, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T17:43:00 KST" name="A04_T03" finished-at="2023-07-04T17:43:52 KST" duration-ms="51766" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for presence of element located by: By.xpath: /hierarchy/android.widget.Toast (tried for 25 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: /hierarchy/android.widget.Toast (tried for 25 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at function.func_appium_android.login_server(func_appium_android.java:345)
+at test_case_android.A04_T03.A04_T03_case(A04_T03.java:28)
+at eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch.A04_T03(eWalker_SSL_VPN_Android_launch.java:90)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SOOSANui-MacBookAir.local', ip: 'fe80:0:0:0:14a8:2e5:7cd6:cc9a%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.3.1', java.version: '17.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {databaseEnabled: false, desired: {deviceName: SM-G991N, platformName: android, platformversion: 12, uuid: R3CRC0MAAKN}, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-T735N, deviceName: R54R8002EJY, deviceScreenDensity: 340, deviceScreenSize: 1600x2560, deviceUDID: R54R8002EJY, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.125, platform: LINUX, platformName: Android, platformVersion: 11, platformversion: 12, statBarHeight: 51, takesScreenshot: true, uuid: R3CRC0MAAKN, viewportRect: {height: 2407, left: 0, top: 51, width: 1600}, warnings: {}, webStorageEnabled: false}
+Session ID: 2ef3adf0-ad83-4d8b-880c-d038b81af07c
+*** Element info: {Using=xpath, value=/hierarchy/android.widget.Toast}
+at jdk.internal.reflect.GeneratedConstructorAccessor13.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
+at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
+at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
+at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+... 31 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A04_T03 -->
+        <test-method signature="A04_T04()[pri:9, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T17:43:52 KST" name="A04_T04" finished-at="2023-07-04T17:58:50 KST" duration-ms="897923" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A04_T04 -->
+        <test-method signature="A04_T05()[pri:10, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T17:58:50 KST" name="A04_T05" finished-at="2023-07-04T17:59:46 KST" duration-ms="56691" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A04_T05 -->
+        <test-method signature="A04_T06()[pri:11, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T17:59:46 KST" name="A04_T06" finished-at="2023-07-04T18:02:02 KST" duration-ms="135971" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A04_T06 -->
+        <test-method signature="A04_T07()[pri:12, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:02:02 KST" name="A04_T07" finished-at="2023-07-04T18:02:56 KST" duration-ms="54021" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A04_T07 -->
+        <test-method signature="A04_T08()[pri:13, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:02:56 KST" name="A04_T08" finished-at="2023-07-04T18:03:51 KST" duration-ms="55060" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A04_T08 -->
+        <test-method signature="A04_T09()[pri:14, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:03:51 KST" name="A04_T09" finished-at="2023-07-04T18:07:37 KST" duration-ms="225866" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A04_T09 -->
+        <test-method signature="A06_T01()[pri:15, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:07:37 KST" name="A06_T01" finished-at="2023-07-04T18:08:31 KST" duration-ms="54093" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A06_T01 -->
+        <test-method signature="A06_T02()[pri:16, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:08:31 KST" name="A06_T02" finished-at="2023-07-04T18:11:49 KST" duration-ms="197453" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A06_T02 -->
+        <test-method signature="A06_T03()[pri:17, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:11:49 KST" name="A06_T03" finished-at="2023-07-04T18:12:32 KST" duration-ms="42868" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A06_T03 -->
+        <test-method signature="A06_T05()[pri:18, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:12:32 KST" name="A06_T05" finished-at="2023-07-04T18:13:43 KST" duration-ms="71658" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A06_T05 -->
+        <test-method signature="A06_T06()[pri:19, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:13:43 KST" name="A06_T06" finished-at="2023-07-04T18:14:17 KST" duration-ms="33895" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[An unknown server-side error occurred while processing the command. Original error: Cannot activate 'com.dreammirae.anyauth.android'. Original error: Error executing adbExec. Original error: 'Command '/Users/soosanint/Library/Android/sdk/platform-tools/adb -P 5037 -s R54R8002EJY shell monkey -p com.dreammirae.anyauth.android -c android.intent.category.LAUNCHER 1' exited with code 252'; Command output: args: [-p, com.dreammirae.anyauth.android, -c, android.intent.category.LAUNCHER, 1]
+ arg: "-p"
+ arg: "com.dreammirae.anyauth.android"
+ arg: "-c"
+ arg: "android.intent.category.LAUNCHER"
+ arg: "1"
+data="com.dreammirae.anyauth.android"
+data="android.intent.category.LAUNCHER"
+
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SOOSANui-MacBookAir.local', ip: 'fe80:0:0:0:14a8:2e5:7cd6:cc9a%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.3.1', java.version: '17.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {databaseEnabled: false, desired: {deviceName: SM-G991N, platformName: android, platformversion: 12, uuid: R3CRC0MAAKN}, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-T735N, deviceName: R54R8002EJY, deviceScreenDensity: 340, deviceScreenSize: 1600x2560, deviceUDID: R54R8002EJY, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.125, platform: LINUX, platformName: Android, platformVersion: 11, platformversion: 12, statBarHeight: 51, takesScreenshot: true, uuid: R3CRC0MAAKN, viewportRect: {height: 2407, left: 0, top: 51, width: 1600}, warnings: {}, webStorageEnabled: false}
+Session ID: 2ef3adf0-ad83-4d8b-880c-d038b81af07c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Cannot activate 'com.dreammirae.anyauth.android'. Original error: Error executing adbExec. Original error: 'Command '/Users/soosanint/Library/Android/sdk/platform-tools/adb -P 5037 -s R54R8002EJY shell monkey -p com.dreammirae.anyauth.android -c android.intent.category.LAUNCHER 1' exited with code 252'; Command output: args: [-p, com.dreammirae.anyauth.android, -c, android.intent.category.LAUNCHER, 1]
+ arg: "-p"
+ arg: "com.dreammirae.anyauth.android"
+ arg: "-c"
+ arg: "android.intent.category.LAUNCHER"
+ arg: "1"
+data="com.dreammirae.anyauth.android"
+data="android.intent.category.LAUNCHER"
+
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SOOSANui-MacBookAir.local', ip: 'fe80:0:0:0:14a8:2e5:7cd6:cc9a%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.3.1', java.version: '17.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {databaseEnabled: false, desired: {deviceName: SM-G991N, platformName: android, platformversion: 12, uuid: R3CRC0MAAKN}, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-T735N, deviceName: R54R8002EJY, deviceScreenDensity: 340, deviceScreenSize: 1600x2560, deviceUDID: R54R8002EJY, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.125, platform: LINUX, platformName: Android, platformVersion: 11, platformversion: 12, statBarHeight: 51, takesScreenshot: true, uuid: R3CRC0MAAKN, viewportRect: {height: 2407, left: 0, top: 51, width: 1600}, warnings: {}, webStorageEnabled: false}
+Session ID: 2ef3adf0-ad83-4d8b-880c-d038b81af07c
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
+at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+at io.appium.java_client.CommandExecutionHelper.execute(CommandExecutionHelper.java:27)
+at io.appium.java_client.InteractsWithApps.activateApp(InteractsWithApps.java:166)
+at io.appium.java_client.InteractsWithApps.activateApp(InteractsWithApps.java:150)
+at function.func_appium_android.activate_app(func_appium_android.java:427)
+at function.func_appium_android.login_server(func_appium_android.java:305)
+at test_case_android.A06_T06.A06_T06_case(A06_T06.java:32)
+at eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch.A06_T06(eWalker_SSL_VPN_Android_launch.java:156)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A06_T06 -->
+        <test-method signature="A07_T01()[pri:20, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:14:17 KST" name="A07_T01" finished-at="2023-07-04T18:15:01 KST" duration-ms="43756" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A07_T01 -->
+        <test-method signature="A07_T03()[pri:21, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:15:01 KST" name="A07_T03" finished-at="2023-07-04T18:16:10 KST" duration-ms="68515" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A07_T03 -->
+        <test-method signature="A07_T04()[pri:22, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:16:10 KST" name="A07_T04" finished-at="2023-07-04T18:18:28 KST" duration-ms="138981" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A07_T04 -->
+        <test-method signature="A07_T05()[pri:23, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:18:28 KST" name="A07_T05" finished-at="2023-07-04T18:19:02 KST" duration-ms="33857" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[An unknown server-side error occurred while processing the command. Original error: Cannot activate 'com.dreammirae.anyauth.android'. Original error: Error executing adbExec. Original error: 'Command '/Users/soosanint/Library/Android/sdk/platform-tools/adb -P 5037 -s R54R8002EJY shell monkey -p com.dreammirae.anyauth.android -c android.intent.category.LAUNCHER 1' exited with code 252'; Command output: args: [-p, com.dreammirae.anyauth.android, -c, android.intent.category.LAUNCHER, 1]
+ arg: "-p"
+ arg: "com.dreammirae.anyauth.android"
+ arg: "-c"
+ arg: "android.intent.category.LAUNCHER"
+ arg: "1"
+data="com.dreammirae.anyauth.android"
+data="android.intent.category.LAUNCHER"
+
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SOOSANui-MacBookAir.local', ip: 'fe80:0:0:0:14a8:2e5:7cd6:cc9a%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.3.1', java.version: '17.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {databaseEnabled: false, desired: {deviceName: SM-G991N, platformName: android, platformversion: 12, uuid: R3CRC0MAAKN}, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-T735N, deviceName: R54R8002EJY, deviceScreenDensity: 340, deviceScreenSize: 1600x2560, deviceUDID: R54R8002EJY, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.125, platform: LINUX, platformName: Android, platformVersion: 11, platformversion: 12, statBarHeight: 51, takesScreenshot: true, uuid: R3CRC0MAAKN, viewportRect: {height: 2407, left: 0, top: 51, width: 1600}, warnings: {}, webStorageEnabled: false}
+Session ID: 2ef3adf0-ad83-4d8b-880c-d038b81af07c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Cannot activate 'com.dreammirae.anyauth.android'. Original error: Error executing adbExec. Original error: 'Command '/Users/soosanint/Library/Android/sdk/platform-tools/adb -P 5037 -s R54R8002EJY shell monkey -p com.dreammirae.anyauth.android -c android.intent.category.LAUNCHER 1' exited with code 252'; Command output: args: [-p, com.dreammirae.anyauth.android, -c, android.intent.category.LAUNCHER, 1]
+ arg: "-p"
+ arg: "com.dreammirae.anyauth.android"
+ arg: "-c"
+ arg: "android.intent.category.LAUNCHER"
+ arg: "1"
+data="com.dreammirae.anyauth.android"
+data="android.intent.category.LAUNCHER"
+
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SOOSANui-MacBookAir.local', ip: 'fe80:0:0:0:14a8:2e5:7cd6:cc9a%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.3.1', java.version: '17.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {databaseEnabled: false, desired: {deviceName: SM-G991N, platformName: android, platformversion: 12, uuid: R3CRC0MAAKN}, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-T735N, deviceName: R54R8002EJY, deviceScreenDensity: 340, deviceScreenSize: 1600x2560, deviceUDID: R54R8002EJY, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.125, platform: LINUX, platformName: Android, platformVersion: 11, platformversion: 12, statBarHeight: 51, takesScreenshot: true, uuid: R3CRC0MAAKN, viewportRect: {height: 2407, left: 0, top: 51, width: 1600}, warnings: {}, webStorageEnabled: false}
+Session ID: 2ef3adf0-ad83-4d8b-880c-d038b81af07c
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
+at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+at io.appium.java_client.CommandExecutionHelper.execute(CommandExecutionHelper.java:27)
+at io.appium.java_client.InteractsWithApps.activateApp(InteractsWithApps.java:166)
+at io.appium.java_client.InteractsWithApps.activateApp(InteractsWithApps.java:150)
+at function.func_appium_android.activate_app(func_appium_android.java:427)
+at function.func_appium_android.login_server(func_appium_android.java:305)
+at test_case_android.A07_T05.A07_T05_case(A07_T05.java:32)
+at eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch.A07_T05(eWalker_SSL_VPN_Android_launch.java:180)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A07_T05 -->
+        <test-method signature="A08_T01()[pri:24, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:19:02 KST" name="A08_T01" finished-at="2023-07-04T18:19:55 KST" duration-ms="52319" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A08_T01 -->
+        <test-method signature="A08_T04()[pri:25, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:19:55 KST" name="A08_T04" finished-at="2023-07-04T18:22:14 KST" duration-ms="139526" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A08_T04 -->
+        <test-method signature="A08_T05()[pri:26, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:22:14 KST" name="A08_T05" finished-at="2023-07-04T18:22:47 KST" duration-ms="32893" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[An unknown server-side error occurred while processing the command. Original error: Cannot activate 'com.dreammirae.anyauth.android'. Original error: Error executing adbExec. Original error: 'Command '/Users/soosanint/Library/Android/sdk/platform-tools/adb -P 5037 -s R54R8002EJY shell monkey -p com.dreammirae.anyauth.android -c android.intent.category.LAUNCHER 1' exited with code 252'; Command output: args: [-p, com.dreammirae.anyauth.android, -c, android.intent.category.LAUNCHER, 1]
+ arg: "-p"
+ arg: "com.dreammirae.anyauth.android"
+ arg: "-c"
+ arg: "android.intent.category.LAUNCHER"
+ arg: "1"
+data="com.dreammirae.anyauth.android"
+data="android.intent.category.LAUNCHER"
+
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SOOSANui-MacBookAir.local', ip: 'fe80:0:0:0:14a8:2e5:7cd6:cc9a%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.3.1', java.version: '17.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {databaseEnabled: false, desired: {deviceName: SM-G991N, platformName: android, platformversion: 12, uuid: R3CRC0MAAKN}, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-T735N, deviceName: R54R8002EJY, deviceScreenDensity: 340, deviceScreenSize: 1600x2560, deviceUDID: R54R8002EJY, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.125, platform: LINUX, platformName: Android, platformVersion: 11, platformversion: 12, statBarHeight: 51, takesScreenshot: true, uuid: R3CRC0MAAKN, viewportRect: {height: 2407, left: 0, top: 51, width: 1600}, warnings: {}, webStorageEnabled: false}
+Session ID: 2ef3adf0-ad83-4d8b-880c-d038b81af07c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Cannot activate 'com.dreammirae.anyauth.android'. Original error: Error executing adbExec. Original error: 'Command '/Users/soosanint/Library/Android/sdk/platform-tools/adb -P 5037 -s R54R8002EJY shell monkey -p com.dreammirae.anyauth.android -c android.intent.category.LAUNCHER 1' exited with code 252'; Command output: args: [-p, com.dreammirae.anyauth.android, -c, android.intent.category.LAUNCHER, 1]
+ arg: "-p"
+ arg: "com.dreammirae.anyauth.android"
+ arg: "-c"
+ arg: "android.intent.category.LAUNCHER"
+ arg: "1"
+data="com.dreammirae.anyauth.android"
+data="android.intent.category.LAUNCHER"
+
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SOOSANui-MacBookAir.local', ip: 'fe80:0:0:0:14a8:2e5:7cd6:cc9a%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.3.1', java.version: '17.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {databaseEnabled: false, desired: {deviceName: SM-G991N, platformName: android, platformversion: 12, uuid: R3CRC0MAAKN}, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-T735N, deviceName: R54R8002EJY, deviceScreenDensity: 340, deviceScreenSize: 1600x2560, deviceUDID: R54R8002EJY, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.125, platform: LINUX, platformName: Android, platformVersion: 11, platformversion: 12, statBarHeight: 51, takesScreenshot: true, uuid: R3CRC0MAAKN, viewportRect: {height: 2407, left: 0, top: 51, width: 1600}, warnings: {}, webStorageEnabled: false}
+Session ID: 2ef3adf0-ad83-4d8b-880c-d038b81af07c
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
+at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+at io.appium.java_client.CommandExecutionHelper.execute(CommandExecutionHelper.java:27)
+at io.appium.java_client.InteractsWithApps.activateApp(InteractsWithApps.java:166)
+at io.appium.java_client.InteractsWithApps.activateApp(InteractsWithApps.java:150)
+at function.func_appium_android.activate_app(func_appium_android.java:427)
+at function.func_appium_android.login_server(func_appium_android.java:305)
+at test_case_android.A08_T05.A08_T05_case(A08_T05.java:33)
+at eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch.A08_T05(eWalker_SSL_VPN_Android_launch.java:198)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A08_T05 -->
+        <test-method signature="A09_T01()[pri:27, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:22:47 KST" name="A09_T01" finished-at="2023-07-04T18:23:40 KST" duration-ms="52454" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A09_T01 -->
+        <test-method signature="A09_T03()[pri:28, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:23:40 KST" name="A09_T03" finished-at="2023-07-04T18:24:50 KST" duration-ms="70122" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A09_T03 -->
+        <test-method signature="A09_T04()[pri:29, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:24:50 KST" name="A09_T04" finished-at="2023-07-04T18:28:10 KST" duration-ms="200666" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A09_T04 -->
+        <test-method signature="A09_T05()[pri:30, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:28:10 KST" name="A09_T05" finished-at="2023-07-04T18:28:44 KST" duration-ms="33303" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[An unknown server-side error occurred while processing the command. Original error: Cannot activate 'com.dreammirae.anyauth.android'. Original error: Error executing adbExec. Original error: 'Command '/Users/soosanint/Library/Android/sdk/platform-tools/adb -P 5037 -s R54R8002EJY shell monkey -p com.dreammirae.anyauth.android -c android.intent.category.LAUNCHER 1' exited with code 252'; Command output: args: [-p, com.dreammirae.anyauth.android, -c, android.intent.category.LAUNCHER, 1]
+ arg: "-p"
+ arg: "com.dreammirae.anyauth.android"
+ arg: "-c"
+ arg: "android.intent.category.LAUNCHER"
+ arg: "1"
+data="com.dreammirae.anyauth.android"
+data="android.intent.category.LAUNCHER"
+
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SOOSANui-MacBookAir.local', ip: 'fe80:0:0:0:14a8:2e5:7cd6:cc9a%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.3.1', java.version: '17.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {databaseEnabled: false, desired: {deviceName: SM-G991N, platformName: android, platformversion: 12, uuid: R3CRC0MAAKN}, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-T735N, deviceName: R54R8002EJY, deviceScreenDensity: 340, deviceScreenSize: 1600x2560, deviceUDID: R54R8002EJY, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.125, platform: LINUX, platformName: Android, platformVersion: 11, platformversion: 12, statBarHeight: 51, takesScreenshot: true, uuid: R3CRC0MAAKN, viewportRect: {height: 2407, left: 0, top: 51, width: 1600}, warnings: {}, webStorageEnabled: false}
+Session ID: 2ef3adf0-ad83-4d8b-880c-d038b81af07c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Cannot activate 'com.dreammirae.anyauth.android'. Original error: Error executing adbExec. Original error: 'Command '/Users/soosanint/Library/Android/sdk/platform-tools/adb -P 5037 -s R54R8002EJY shell monkey -p com.dreammirae.anyauth.android -c android.intent.category.LAUNCHER 1' exited with code 252'; Command output: args: [-p, com.dreammirae.anyauth.android, -c, android.intent.category.LAUNCHER, 1]
+ arg: "-p"
+ arg: "com.dreammirae.anyauth.android"
+ arg: "-c"
+ arg: "android.intent.category.LAUNCHER"
+ arg: "1"
+data="com.dreammirae.anyauth.android"
+data="android.intent.category.LAUNCHER"
+
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SOOSANui-MacBookAir.local', ip: 'fe80:0:0:0:14a8:2e5:7cd6:cc9a%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.3.1', java.version: '17.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {databaseEnabled: false, desired: {deviceName: SM-G991N, platformName: android, platformversion: 12, uuid: R3CRC0MAAKN}, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-T735N, deviceName: R54R8002EJY, deviceScreenDensity: 340, deviceScreenSize: 1600x2560, deviceUDID: R54R8002EJY, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.125, platform: LINUX, platformName: Android, platformVersion: 11, platformversion: 12, statBarHeight: 51, takesScreenshot: true, uuid: R3CRC0MAAKN, viewportRect: {height: 2407, left: 0, top: 51, width: 1600}, warnings: {}, webStorageEnabled: false}
+Session ID: 2ef3adf0-ad83-4d8b-880c-d038b81af07c
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
+at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+at io.appium.java_client.CommandExecutionHelper.execute(CommandExecutionHelper.java:27)
+at io.appium.java_client.InteractsWithApps.activateApp(InteractsWithApps.java:166)
+at io.appium.java_client.InteractsWithApps.activateApp(InteractsWithApps.java:150)
+at function.func_appium_android.activate_app(func_appium_android.java:427)
+at function.func_appium_android.login_server(func_appium_android.java:305)
+at test_case_android.A09_T05.A09_T05_case(A09_T05.java:32)
+at eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch.A09_T05(eWalker_SSL_VPN_Android_launch.java:222)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A09_T05 -->
+        <test-method signature="A10_T01()[pri:31, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:28:44 KST" name="A10_T01" finished-at="2023-07-04T18:29:36 KST" duration-ms="52376" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A10_T01 -->
+        <test-method signature="A10_T03()[pri:32, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:29:36 KST" name="A10_T03" finished-at="2023-07-04T18:30:46 KST" duration-ms="69974" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A10_T03 -->
+        <test-method signature="A10_T04()[pri:33, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:30:46 KST" name="A10_T04" finished-at="2023-07-04T18:34:04 KST" duration-ms="197794" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A10_T04 -->
+        <test-method signature="A10_T05()[pri:34, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:34:04 KST" name="A10_T05" finished-at="2023-07-04T18:34:37 KST" duration-ms="33536" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[An unknown server-side error occurred while processing the command. Original error: Cannot activate 'com.dreammirae.anyauth.android'. Original error: Error executing adbExec. Original error: 'Command '/Users/soosanint/Library/Android/sdk/platform-tools/adb -P 5037 -s R54R8002EJY shell monkey -p com.dreammirae.anyauth.android -c android.intent.category.LAUNCHER 1' exited with code 252'; Command output: args: [-p, com.dreammirae.anyauth.android, -c, android.intent.category.LAUNCHER, 1]
+ arg: "-p"
+ arg: "com.dreammirae.anyauth.android"
+ arg: "-c"
+ arg: "android.intent.category.LAUNCHER"
+ arg: "1"
+data="com.dreammirae.anyauth.android"
+data="android.intent.category.LAUNCHER"
+
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SOOSANui-MacBookAir.local', ip: 'fe80:0:0:0:14a8:2e5:7cd6:cc9a%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.3.1', java.version: '17.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {databaseEnabled: false, desired: {deviceName: SM-G991N, platformName: android, platformversion: 12, uuid: R3CRC0MAAKN}, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-T735N, deviceName: R54R8002EJY, deviceScreenDensity: 340, deviceScreenSize: 1600x2560, deviceUDID: R54R8002EJY, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.125, platform: LINUX, platformName: Android, platformVersion: 11, platformversion: 12, statBarHeight: 51, takesScreenshot: true, uuid: R3CRC0MAAKN, viewportRect: {height: 2407, left: 0, top: 51, width: 1600}, warnings: {}, webStorageEnabled: false}
+Session ID: 2ef3adf0-ad83-4d8b-880c-d038b81af07c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Cannot activate 'com.dreammirae.anyauth.android'. Original error: Error executing adbExec. Original error: 'Command '/Users/soosanint/Library/Android/sdk/platform-tools/adb -P 5037 -s R54R8002EJY shell monkey -p com.dreammirae.anyauth.android -c android.intent.category.LAUNCHER 1' exited with code 252'; Command output: args: [-p, com.dreammirae.anyauth.android, -c, android.intent.category.LAUNCHER, 1]
+ arg: "-p"
+ arg: "com.dreammirae.anyauth.android"
+ arg: "-c"
+ arg: "android.intent.category.LAUNCHER"
+ arg: "1"
+data="com.dreammirae.anyauth.android"
+data="android.intent.category.LAUNCHER"
+
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SOOSANui-MacBookAir.local', ip: 'fe80:0:0:0:14a8:2e5:7cd6:cc9a%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.3.1', java.version: '17.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {databaseEnabled: false, desired: {deviceName: SM-G991N, platformName: android, platformversion: 12, uuid: R3CRC0MAAKN}, deviceApiLevel: 30, deviceManufacturer: samsung, deviceModel: SM-T735N, deviceName: R54R8002EJY, deviceScreenDensity: 340, deviceScreenSize: 1600x2560, deviceUDID: R54R8002EJY, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.125, platform: LINUX, platformName: Android, platformVersion: 11, platformversion: 12, statBarHeight: 51, takesScreenshot: true, uuid: R3CRC0MAAKN, viewportRect: {height: 2407, left: 0, top: 51, width: 1600}, warnings: {}, webStorageEnabled: false}
+Session ID: 2ef3adf0-ad83-4d8b-880c-d038b81af07c
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
+at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+at io.appium.java_client.CommandExecutionHelper.execute(CommandExecutionHelper.java:27)
+at io.appium.java_client.InteractsWithApps.activateApp(InteractsWithApps.java:166)
+at io.appium.java_client.InteractsWithApps.activateApp(InteractsWithApps.java:150)
+at function.func_appium_android.activate_app(func_appium_android.java:427)
+at function.func_appium_android.login_server(func_appium_android.java:305)
+at test_case_android.A10_T05.A10_T05_case(A10_T05.java:32)
+at eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch.A10_T05(eWalker_SSL_VPN_Android_launch.java:246)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A10_T05 -->
+        <test-method signature="A11_T01()[pri:35, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:34:37 KST" name="A11_T01" finished-at="2023-07-04T18:35:03 KST" duration-ms="25863" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A11_T01 -->
+        <test-method signature="A11_T02()[pri:36, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:35:03 KST" name="A11_T02" finished-at="2023-07-04T18:35:28 KST" duration-ms="24678" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A11_T02 -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch@6631f5ca]" started-at="2023-07-04T18:35:28 KST" name="afterTest" finished-at="2023-07-04T18:35:28 KST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
