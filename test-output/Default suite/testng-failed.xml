@@ -3,18 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch">
+      <class name="eWalker_SSL_VPN_V10.eWalker_SSL_VPN_iOS_launch">
         <methods>
-          <include name="A04_T03"/>
-          <include name="A09_T05"/>
-          <include name="A10_T05"/>
-          <include name="A08_T05"/>
           <include name="beforeTest"/>
           <include name="afterTest"/>
-          <include name="A06_T06"/>
-          <include name="A07_T05"/>
+          <include name="I04_T01"/>
         </methods>
-      </class> <!-- eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch -->
+      </class> <!-- eWalker_SSL_VPN_V10.eWalker_SSL_VPN_iOS_launch -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

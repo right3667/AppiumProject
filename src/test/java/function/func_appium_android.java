@@ -114,6 +114,7 @@ public class func_appium_android {
 	
 	public int connect_ping_chk (AndroidDriver<AndroidElement> driver, String host) {
 		int result;
+		
 		start_app(driver, "com.lipinic.ping", "com.lipinic.ping.MainActivity", "com.lipinic.ping:id/editTextHost");
 		
 		MobileElement editTextHost = (MobileElement) driver.findElementById("com.lipinic.ping:id/editTextHost");

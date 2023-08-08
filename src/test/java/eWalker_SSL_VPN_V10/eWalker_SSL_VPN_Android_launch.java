@@ -1,39 +1,82 @@
 package eWalker_SSL_VPN_V10;
 
-import org.testng.annotations.Test;
-
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
-import test_case_android.*;
-
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.AfterTest;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Date;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
+import test_case_android.A01_T01;
+import test_case_android.A02_T01;
+import test_case_android.A02_T02;
+import test_case_android.A02_T03;
+import test_case_android.A02_T05;
+import test_case_android.A03_T01;
+import test_case_android.A03_T02;
+import test_case_android.A03_T03;
+import test_case_android.A04_T01;
+import test_case_android.A04_T02;
+import test_case_android.A04_T03;
+import test_case_android.A04_T04;
+import test_case_android.A04_T05;
+import test_case_android.A04_T06;
+import test_case_android.A04_T07;
+import test_case_android.A04_T08;
+import test_case_android.A04_T09;
+import test_case_android.A05_T01;
+import test_case_android.A05_T02;
+import test_case_android.A05_T03;
+import test_case_android.A05_T04;
+import test_case_android.A05_T05;
+import test_case_android.A05_T06;
+import test_case_android.A05_T07;
+import test_case_android.A06_T01;
+import test_case_android.A06_T02;
+import test_case_android.A06_T03;
+import test_case_android.A06_T05;
+import test_case_android.A06_T06;
+import test_case_android.A07_T01;
+import test_case_android.A07_T03;
+import test_case_android.A07_T04;
+import test_case_android.A07_T05;
+import test_case_android.A08_T01;
+import test_case_android.A08_T04;
+import test_case_android.A08_T05;
+import test_case_android.A09_T01;
+import test_case_android.A09_T03;
+import test_case_android.A09_T04;
+import test_case_android.A09_T05;
+import test_case_android.A10_T01;
+import test_case_android.A10_T03;
+import test_case_android.A10_T04;
+import test_case_android.A10_T05;
+import test_case_android.A11_T01;
+import test_case_android.A11_T02;
 
 
 public class eWalker_SSL_VPN_Android_launch {
 	
 	AndroidDriver<AndroidElement> driver;
-	
 	Date date_now = new Date(System.currentTimeMillis());
+	/*
+	@Test(priority = 1)
+	public void A00() throws IOException {
+		A00 launch_test = new A00();
+		launch_test.A00(driver);
+	}
+	*/
 	
 	@Test(priority = 0)
 	public void A01_T01() {
-		
-//		String activity2 = driver.currentActivity();
-        //System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + activity2);
-//      driver.startActivity(new Activity("kr.co.soosan.vpn.client.v10", "kr.co.soosan.vpn.client.v10"));
-        
-		//driver.switchTo().window("handle");
-		
 		A01_T01 launch_test = new A01_T01();
 		launch_test.A01_T01_case(driver);
-		
+	
 	}
 	
 	@Test(priority = 1)
@@ -52,6 +95,12 @@ public class eWalker_SSL_VPN_Android_launch {
 	public void A02_T03() {
 		A02_T03 launch_test = new A02_T03();
 		launch_test.A02_T03_case(driver);
+	}
+	
+	@Test(priority = 3)
+	public void A02_T05() {
+		A02_T05 launch_test = new A02_T05();
+		launch_test.A02_T05_case(driver);
 	}
 	
 	@Test(priority = 4)
@@ -124,6 +173,48 @@ public class eWalker_SSL_VPN_Android_launch {
 	public void A04_T09() {
 		A04_T09 launch_test = new A04_T09();
 		launch_test.A04_T09_case(driver);
+	}
+	
+	@Test(priority = 14)
+	public void A05_T01() {
+		A05_T01 launch_test = new A05_T01();
+		launch_test.A05_T01_case(driver);
+	}
+
+	@Test(priority = 14)
+	public void A05_T02() {
+		A05_T02 launch_test = new A05_T02();
+		launch_test.A05_T02_case(driver);
+	}
+	
+	@Test(priority = 14)
+	public void A05_T03() {
+		A05_T03 launch_test = new A05_T03();
+		launch_test.A05_T03_case(driver);
+	}
+	
+	@Test(priority = 14)
+	public void A05_T04() {
+		A05_T04 launch_test = new A05_T04();
+		launch_test.A05_T04_case(driver);
+	}
+	
+	@Test(priority = 14)
+	public void A05_T05() {
+		A05_T05 launch_test = new A05_T05();
+		launch_test.A05_T05_case(driver);
+	}
+	
+	@Test(priority = 14)
+	public void A05_T06() {
+		A05_T06 launch_test = new A05_T06();
+		launch_test.A05_T06_case(driver);
+	}
+	
+	@Test(priority = 14)
+	public void A05_T07() {
+		A05_T07 launch_test = new A05_T07();
+		launch_test.A05_T07_case(driver);
 	}
 	
 	@Test(priority = 15)
@@ -266,7 +357,10 @@ public class eWalker_SSL_VPN_Android_launch {
 		capabilities.setCapability("deviceName","SM-G991N");
 		capabilities.setCapability("uuid","R3CRC0MAAKN");
 		capabilities.setCapability("platformversion","12");
-	  
+		//HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+		//browserstackOptions.put("enableBiometric", "true");
+		
+		
 		try {
 			driver = new AndroidDriver<AndroidElement> (new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 		} catch (MalformedURLException e) {

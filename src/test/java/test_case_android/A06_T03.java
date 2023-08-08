@@ -12,20 +12,20 @@ import io.appium.java_client.android.AndroidElement;
 
 public class A06_T03 {
 	
-	func_appium_android test_func = new func_appium_android();
+	func_appium_android app_func = new func_appium_android();
 	
 	Date date_now = new Date(System.currentTimeMillis());
 	
 	public void A06_T03_case(AndroidDriver<AndroidElement> driver) {
-		test_func.sleep(driver, 3);
+		app_func.sleep(driver, 3);
 		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + "TC A06_T03 실행");
 		
-		test_func.start_app(driver, "kr.co.soosan.vpn.client.v10", "kr.co.soosan.vpn.client.v10.MainActivity", "kr.co.soosan.vpn.client.v10:id/action_info");
+		app_func.start_app(driver, "kr.co.soosan.vpn.client.v10", "kr.co.soosan.vpn.client.v10.MainActivity", "kr.co.soosan.vpn.client.v10:id/action_info");
 		
-		test_func.connect_server(driver, "172.16.150.22", "443");
+		app_func.connect_server(driver, "172.16.150.22", "443");
 		
 		// ID/PW 정상일 경우 변경됨을 확인
-		if (test_func.regist_otp_key(driver, "user_mobile_otp", "admin123!", "1234567890") == 0) {
+		if (app_func.regist_otp_key(driver, "user_mobile_otp", "admin123!", "1234567890") == 0) {
 			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "OTP Key 변경됨을 확인");
 		}
 		else {
@@ -33,7 +33,7 @@ public class A06_T03 {
 		}
 		
 		// ID가 틀릴 경우 변경되지 않음 확인
-		if (test_func.regist_otp_key(driver, "user_mobile_otp2", "admin123!", "1234567890") == 0) {
+		if (app_func.regist_otp_key(driver, "user_mobile_otp2", "admin123!", "1234567890") == 0) {
 			assertTrue(false);
 		}
 		else {
@@ -41,7 +41,7 @@ public class A06_T03 {
 		}
 		
 		// PW가 틀릴 경우 변경되지 않음 확인
-		if (test_func.regist_otp_key(driver, "user_mobile_otp", "admin123!!", "1234567890") == 0) {
+		if (app_func.regist_otp_key(driver, "user_mobile_otp", "admin123!!", "1234567890") == 0) {
 			assertTrue(false);
 		}
 		else {
@@ -50,7 +50,7 @@ public class A06_T03 {
 		
 		/*
 		// OTP 키 값이 빈 값인 경우 초기화됨 (현재 동작되지 않음)
-		if (test_func.regist_otp_key(driver, "user_mobile_otp", "admin123!!", "1234567890") == 0) {
+		if (app_func.regist_otp_key(driver, "user_mobile_otp", "admin123!!", "1234567890") == 0) {
 			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "초기화 됨");
 		}
 		else {

@@ -37,10 +37,8 @@ public class eWalker_SSL_VPN_iOS_launch {
 	
 	@Test(priority = 2)
 	public void I02_T02() {
-		while (true) {
-			I02_T02 launch_test = new I02_T02();
-			launch_test.I02_T02_case(driver);
-		}
+		I02_T02 launch_test = new I02_T02();
+		launch_test.I02_T02_case(driver);
 	}
 
 	@Test(priority = 3)
@@ -48,6 +46,27 @@ public class eWalker_SSL_VPN_iOS_launch {
 		I03_T01 launch_test = new I03_T01();
 		launch_test.I03_T01_case(driver);
 	}
+	
+	@Test(priority = 4)
+	public void I03_T02() {
+		I03_T02 launch_test = new I03_T02();
+		launch_test.I03_T02_case(driver);
+	}
+	
+	
+	@Test(priority = 5)
+	public void I03_T03() {
+		I03_T03 launch_test = new I03_T03();
+		launch_test.I03_T03_case(driver);
+	}
+	
+	
+	@Test(priority = 5)
+	public void I04_T01() {
+		I04_T01 launch_test = new I04_T01();
+		launch_test.I04_T01_case(driver);
+	}
+	
 	
 	/*
 	 * 

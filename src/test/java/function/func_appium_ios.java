@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.Activity;
@@ -63,25 +64,108 @@ public class func_appium_ios {
 		return result;
 	}
 	
-
-	
-	public void change_pw(IOSDriver<IOSElement> driver, String oldpw, String chpw1, String chpw2) {
-		MobileElement et_oldpw = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/et_oldpw");
-		et_oldpw.sendKeys(oldpw);
-		MobileElement et_chpw1 = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/et_chpw1");
-		et_chpw1.sendKeys(chpw1);
-		MobileElement et_chpw2 = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/et_chpw2");
-		et_chpw2.sendKeys(chpw2);
-		MobileElement btn_confirm_chpw = (MobileElement) driver.findElementById("android:id/button2");
-		btn_confirm_chpw.click();
-
-		delay(driver, "id", "android:id/button1", 5);
+	public int connect_destination_safari (IOSDriver<IOSElement> driver) {
 		
-		MobileElement chpw_message = (MobileElement) driver.findElementById("android:id/message");
-		String message = chpw_message.getText();
-		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "비밀번호 변경 메시지: " + message);
-		MobileElement btn_confirm_alert = (MobileElement) driver.findElementById("android:id/button1");
-		btn_confirm_alert.click();
+		int result = 1;
+		
+		//System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "1");
+		
+		start_app(driver, "com.apple.mobilesafari", "TabBarItemTitle");
+		
+		driver.findElementByAccessibilityId("TabBarItemTitle").click();
+		driver.findElementByAccessibilityId("delete").click();
+		driver.findElementByAccessibilityId("more").click();
+		
+		driver.findElementByAccessibilityId("3").click();
+		driver.findElementByAccessibilityId("0").click();
+		driver.findElementByAccessibilityId(".").click();
+		driver.findElementByAccessibilityId("0").click();
+		driver.findElementByAccessibilityId(".").click();
+		driver.findElementByAccessibilityId("0").click();
+		driver.findElementByAccessibilityId(".").click();
+		driver.findElementByAccessibilityId("5").click();
+		driver.findElementByAccessibilityId("Go").click();
+		
+		if (delay(driver, "xpath", "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.widget.TextView[1]", 10) == 0) {
+			result = 0;
+		}
+		else {
+			result = 1;
+		}
+		
+		
+		/*
+		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("옵션 더보기");
+		el1.click();
+		
+		delay(driver, "id", "com.android.chrome:id/new_incognito_tab_menu_id", 5);
+		
+		MobileElement el2 = (MobileElement) driver.findElementByAccessibilityId("새 시크릿 탭");
+		el2.click();
+		
+		delay(driver, "id", "com.android.chrome:id/url_bar", 5);
+		
+		MobileElement url_bar_1 = (MobileElement) driver.findElementById("com.android.chrome:id/url_bar");
+		
+		url_bar_1.click();
+		url_bar_1.sendKeys("30.0.0.5");
+		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
+		if (delay(driver, "xpath", "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.widget.TextView[1]", 10) == 0) {
+			result = 0;
+		}
+		else {
+			result = 1;
+		}
+		
+		MobileElement url_bar_2 = (MobileElement) driver.findElementById("com.android.chrome:id/url_bar");
+		
+		url_bar_2.click();
+		url_bar_2.sendKeys("30.0.0.5/test");
+		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
+		if (delay(driver, "xpath", "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.widget.TextView[1]", 10) == 0) {
+			result = 0;
+		}
+		else {
+			result = 1;
+		}
+		
+		if (result == 0) {
+			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "chrome 목적지 연결됨");
+		}
+		else {
+			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "chrome 목적지 연결되지 않음");
+		}
+		
+		driver.terminateApp("com.android.chrome");
+		*/
+		return result;
+	}
+	
+	public int connect_ping_chk (AndroidDriver<AndroidElement> driver, String host) {
+		int result;
+		driver.terminateApp("com.soosanint.ewalker.vpn.v10");
+		//start_app(driver, "com.deftapps.ping", "btn info blue");
+		
+		MobileElement editTextHost = (MobileElement) driver.findElementById("com.lipinic.ping:id/editTextHost");
+		editTextHost.sendKeys(host);
+		MobileElement btnStart = (MobileElement) driver.findElementById("com.lipinic.ping:id/btnStart");
+		btnStart.click();
+		
+		//delay(driver, "id", "com.lipinic.ping:id/txtResult", 30);
+		
+		MobileElement txtResult = (MobileElement) driver.findElementById("com.lipinic.ping:id/txtResult");
+		if (txtResult.getText().contains("icmp")) {
+			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + host + " ping 연결됨");
+			result = 0;
+		}
+		else {
+			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + host + " ping 연결되지 않음");
+			result = 1;
+		}
+		
+		driver.terminateApp("com.lipinic.ping");
+		
+		return result;
 	}
 	
 	public int login_confirm(IOSDriver<IOSElement> driver, String check) {
@@ -183,9 +267,11 @@ public class func_appium_ios {
 		
 	}
 	
-	public void login_server(IOSDriver<IOSElement> driver, String user_id, String user_pw, int login_type, int select_policy) {
+	public int login_server(IOSDriver<IOSElement> driver, String user_id, String user_pw, int login_type, int select_policy) {
 		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "로그인 시도: " + user_id + " / " + user_pw);
+		int result = 1;
 		MobileElement tf_login_id = (MobileElement) driver.findElementByAccessibilityId("tf_login_id");
+		tf_login_id.clear();
 		tf_login_id.sendKeys(user_id);
 		MobileElement tf_login_passwd = (MobileElement) driver.findElementByAccessibilityId("tf_login_passwd");
 		tf_login_passwd.sendKeys(user_pw);
@@ -312,20 +398,72 @@ public class func_appium_ios {
 			redirect_policy_select.click();
 		}
 		
-		/*delay(driver, "id", "허용", 30);
+		result = login_confirm(driver, "login");
+		return result;
+	}
+	
+	public int change_pw(IOSDriver<IOSElement> driver, String oldpw, String chpw1, String chpw2) {
+		int result = 1;
+		MobileElement et_oldpw = (MobileElement) driver.findElementById("tf_passwd_pp_current");
+		et_oldpw.sendKeys(oldpw);
+		MobileElement et_chpw1 = (MobileElement) driver.findElementById("tf_passwd_pp_new");
+		et_chpw1.sendKeys(chpw1);
+		MobileElement et_chpw2 = (MobileElement) driver.findElementById("tf_passwd_pp_check_new");
+		et_chpw2.sendKeys(chpw2);
+		MobileElement btn_confirm_chpw = (MobileElement) driver.findElementById("btn_passwd_pp_ok");
+		btn_confirm_chpw.click();
+
+		//delay(driver, "id", "확인", 5);
 		
-		MobileElement allow = (MobileElement) driver.findElementByAccessibilityId("허용");
-		allow.click();
+		try {
+			MobileElement chpw_message = (MobileElement) driver.findElementById("현재 비밀 번호를 입력하시기 바랍니다.");
+			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "비밀번호 변경 메시지: " + "현재 비밀 번호를 입력하시기 바랍니다.");
+		}catch (Exception e) {
+			result = 1;
+		}
 		
-		delay(driver, "id", "9", 30);
+		try {
+			MobileElement chpw_message = (MobileElement) driver.findElementById("비밀번호 변경을 실패하였습니다. 기존 비밀번호를 확인하시기 바랍니다.");
+			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "비밀번호 변경 메시지: " + "비밀번호 변경을 실패하였습니다. 기존 비밀번호를 확인하시기 바랍니다.");
+		}catch (Exception e) {
+			result = 1;
+		}
 		
-		MobileElement iphone_pw = (MobileElement) driver.findElementByAccessibilityId("9");
-		iphone_pw.click();
-		iphone_pw.click();
-		iphone_pw.click();
-		iphone_pw.click();
+		try {
+			MobileElement chpw_message = (MobileElement) driver.findElementById("새 비밀 번호와 일치하지 않습니다. ");
+			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "비밀번호 변경 메시지: " + "새 비밀 번호와 일치하지 않습니다.");
+		}catch (Exception e) {
+			result = 1;
+		}
+		
+		/* 해당 메시지를 아이폰에서 찾지 못하여 확인 버튼 클릭 후 다른 엘리먼트로 확인
+		try {
+			MobileElement chpw_message = (MobileElement) driver.findElementById("비밀번호가 변경되었습니다. 다시 로그인 해주시기 바랍니다. ");
+			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "비밀번호 변경 메시지: " + "비밀번호가 변경되었습니다. 다시 로그인 해주시기 바랍니다.");
+			result = 0;
+		}catch (Exception e) {
+			result = 1;
+		}
 		*/
-		login_confirm(driver, "login");
+				
+		TouchAction actionOne = new TouchAction(driver);
+		actionOne.tap(PointOption.point(185, 450)).perform(); //아이디 존재하지 않아 임시 버튼 클릭
+		
+		MobileElement chpw_check = (MobileElement) driver.findElementById("btn info blue");
+		if (chpw_check.isDisplayed() == true) {
+			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "비밀번호 변경 메시지: " + "비밀번호가 변경되었습니다. 다시 로그인 해주시기 바랍니다.");
+			result = 0;
+		}
+		else {
+			result = 1;
+		}
+		
+		/*
+		MobileElement btn_confirm_alert = (MobileElement) driver.findElementById("확인");
+		btn_confirm_alert.click();
+		*/
+		
+		return result;
 	}
 	
 	public void logout_server(IOSDriver<IOSElement> driver) {
