@@ -7,7 +7,7 @@
         <methods>
           <include name="beforeTest"/>
           <include name="afterTest"/>
-          <include name="I04_T01"/>
+          <include name="I07_T05"/>
         </methods>
       </class> <!-- eWalker_SSL_VPN_V10.eWalker_SSL_VPN_iOS_launch -->
     </classes>

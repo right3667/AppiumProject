@@ -1,6 +1,7 @@
 package function;
 
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,13 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.Activity;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
-import io.appium.java_client.android.nativekey.AndroidKey;
-import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
+import io.appium.java_client.touch.LongPressOptions;
+import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
 
 public class func_appium_ios {
@@ -23,44 +21,35 @@ public class func_appium_ios {
 	public static void main(String[] args) {
 	}
 
-	
-	
 	public int regist_otp_key(IOSDriver<IOSElement> driver, String id, String pw, String otp_key) {
 		
 		int result = 1;
 		
-		delay(driver, "id", "kr.co.soosan.vpn.client.v10:id/btnRegistOTPKey", 10);
-		MobileElement btnRegistOTPKey = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/btnRegistOTPKey");
-		btnRegistOTPKey.click();
+		delay(driver, "id", "OTP Key 등록", 10);
+		driver.findElementByAccessibilityId("OTP Key 등록").click();
 		
-		delay(driver, "id", "kr.co.soosan.vpn.client.v10:id/editUserID", 10);
+		delay(driver, "id", "tf_otp_pp_id", 5);
+		driver.findElementByAccessibilityId("tf_otp_pp_id").clear();;
+		driver.findElementByAccessibilityId("tf_otp_pp_id").sendKeys(id);
+		driver.findElementByAccessibilityId("tf_otp_pp_passwd").clear();
+		driver.findElementByAccessibilityId("tf_otp_pp_passwd").sendKeys(pw);
+		driver.findElementByAccessibilityId("tf_otp_pp_key").clear();
+		driver.findElementByAccessibilityId("tf_otp_pp_key").sendKeys(otp_key);
+		driver.findElementByAccessibilityId("btn_otp_pp_ok").click();
 		
-		MobileElement editUserID = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/editUserID");
-		editUserID.clear();
-		editUserID.sendKeys(id);
-		MobileElement editPassword = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/editPassword");
-		editPassword.clear();
-		editPassword.sendKeys(pw);
-		MobileElement editOTPKey = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/editOTPKey");
-		editOTPKey.clear();
-		editOTPKey.sendKeys(otp_key);
-		
-		MobileElement reg_confirm_btn = (MobileElement) driver.findElementById("android:id/button1");
-		reg_confirm_btn.click();
-		
-		delay(driver, "id", "android:id/button1", 10);
-		
-		MobileElement confirm_btn = (MobileElement) driver.findElementById("android:id/button1");
-		MobileElement confirm_msg = (MobileElement) driver.findElementById("android:id/message");
-		if (confirm_msg.getText().contains("등록하였습니다.")) {
+		if (delay(driver, "id", "OTP Key 등록이 완료되었습니다. ", 5) == 0) {
 			result = 0;
 		}
 		else {
 			result = 1;
 		}
 		
-		confirm_btn.click();
-
+		driver.findElementByAccessibilityId("aler_ok").click();
+		
+		if (result == 1) {
+			driver.findElementByAccessibilityId("btn_otp_pp_close").click();
+		}
+		
 		return result;
 	}
 	
@@ -68,11 +57,12 @@ public class func_appium_ios {
 		
 		int result = 1;
 		
-		//System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "1");
-		
 		start_app(driver, "com.apple.mobilesafari", "TabBarItemTitle");
 		
+		delay(driver, "id", "TabBarItemTitle", 10);
+		
 		driver.findElementByAccessibilityId("TabBarItemTitle").click();
+		sleep(driver, 1);
 		driver.findElementByAccessibilityId("delete").click();
 		driver.findElementByAccessibilityId("more").click();
 		
@@ -86,84 +76,62 @@ public class func_appium_ios {
 		driver.findElementByAccessibilityId("5").click();
 		driver.findElementByAccessibilityId("Go").click();
 		
-		if (delay(driver, "xpath", "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.widget.TextView[1]", 10) == 0) {
+		sleep(driver, 3);
+		
+		try {
+			driver.findElementByIosClassChain("**/XCUIElementTypeOther[`label == \"HTML\"`]/XCUIElementTypeTextField").click();
+			sleep(driver, 1);
+			driver.findElementByAccessibilityId("delete").click();
+			driver.findElementByAccessibilityId("more").click();
+			
+			driver.findElementByAccessibilityId("3").click();
+			driver.findElementByAccessibilityId("0").click();
+			driver.findElementByAccessibilityId(".").click();
+			driver.findElementByAccessibilityId("0").click();
+			driver.findElementByAccessibilityId(".").click();
+			driver.findElementByAccessibilityId("0").click();
+			driver.findElementByAccessibilityId(".").click();
+			driver.findElementByAccessibilityId("5").click();
+			driver.findElementByAccessibilityId("완료").click();
+			
+			driver.findElementByAccessibilityId("ReloadButton").click();
+			
+			sleep(driver, 3);
+			
+			driver.findElementByIosClassChain("**/XCUIElementTypeOther[`label == \"HTML\"`]/XCUIElementTypeTextField").click();
+			
+			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "목적지 통신됨");
 			result = 0;
-		}
-		else {
+			
+		}catch (Exception e) {
+			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "목적지 통신되지 않음");
 			result = 1;
 		}
 		
+		driver.terminateApp("com.apple.mobilesafari");
 		
-		/*
-		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("옵션 더보기");
-		el1.click();
-		
-		delay(driver, "id", "com.android.chrome:id/new_incognito_tab_menu_id", 5);
-		
-		MobileElement el2 = (MobileElement) driver.findElementByAccessibilityId("새 시크릿 탭");
-		el2.click();
-		
-		delay(driver, "id", "com.android.chrome:id/url_bar", 5);
-		
-		MobileElement url_bar_1 = (MobileElement) driver.findElementById("com.android.chrome:id/url_bar");
-		
-		url_bar_1.click();
-		url_bar_1.sendKeys("30.0.0.5");
-		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
-		if (delay(driver, "xpath", "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.widget.TextView[1]", 10) == 0) {
-			result = 0;
-		}
-		else {
-			result = 1;
-		}
-		
-		MobileElement url_bar_2 = (MobileElement) driver.findElementById("com.android.chrome:id/url_bar");
-		
-		url_bar_2.click();
-		url_bar_2.sendKeys("30.0.0.5/test");
-		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
-		if (delay(driver, "xpath", "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.widget.TextView[1]", 10) == 0) {
-			result = 0;
-		}
-		else {
-			result = 1;
-		}
-		
-		if (result == 0) {
-			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "chrome 목적지 연결됨");
-		}
-		else {
-			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "chrome 목적지 연결되지 않음");
-		}
-		
-		driver.terminateApp("com.android.chrome");
-		*/
 		return result;
 	}
 	
-	public int connect_ping_chk (AndroidDriver<AndroidElement> driver, String host) {
-		int result;
-		driver.terminateApp("com.soosanint.ewalker.vpn.v10");
-		//start_app(driver, "com.deftapps.ping", "btn info blue");
+	public int connect_ping_chk (IOSDriver<IOSElement> driver, String host) {
+		int result = 1;
 		
-		MobileElement editTextHost = (MobileElement) driver.findElementById("com.lipinic.ping:id/editTextHost");
-		editTextHost.sendKeys(host);
-		MobileElement btnStart = (MobileElement) driver.findElementById("com.lipinic.ping:id/btnStart");
-		btnStart.click();
+		start_app(driver, "com.deftapps.ping", "Sent");
 		
-		//delay(driver, "id", "com.lipinic.ping:id/txtResult", 30);
+		driver.findElementByIosClassChain("**/XCUIElementTypeTextField[`value == \"<Hostname or IP address>\"`]").sendKeys(host);
+				
+		driver.findElementByIosClassChain("**/XCUIElementTypeButton[`label == \"Ping\"`]").click();
 		
-		MobileElement txtResult = (MobileElement) driver.findElementById("com.lipinic.ping:id/txtResult");
-		if (txtResult.getText().contains("icmp")) {
-			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + host + " ping 연결됨");
+		if (delay(driver, "id", host, 5) == 0) {
+			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + host + " " + "ping 연결 됨");
 			result = 0;
 		}
 		else {
-			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + host + " ping 연결되지 않음");
+			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + host + " " + "ping 연결 되지 않음");
 			result = 1;
 		}
 		
-		driver.terminateApp("com.lipinic.ping");
+		driver.terminateApp("com.deftapps.ping");
 		
 		return result;
 	}
@@ -171,10 +139,12 @@ public class func_appium_ios {
 	public int login_confirm(IOSDriver<IOSElement> driver, String check) {
 		int result;
 		
+		//로그인 확인
 		if (check == "login") {
 			try {
-				WebDriverWait wait = new WebDriverWait(driver, 10);
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("VPN 연결 종료")));
+				//WebDriverWait wait = new WebDriverWait(driver, 10);
+				//wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("VPN 연결 종료")));
+				driver.findElementByAccessibilityId("VPN 연결 종료");
 				System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "로그인 확인: 로그인");
 				result = 0;
 			}catch (Exception e) {
@@ -182,10 +152,11 @@ public class func_appium_ios {
 				result = 1;
 			}
 		}
+		
+		//로그아웃 확인
 		else {
 			try {
-				WebDriverWait wait = new WebDriverWait(driver, 10);
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("VPN 서버 접속")));
+				driver.findElementByAccessibilityId("VPN 서버 접속");
 				System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "로그인 확인: 로그아웃");
 				result = 0;
 			}catch (Exception e) {
@@ -210,7 +181,7 @@ public class func_appium_ios {
 		
 		driver.activateApp(bundleid);
 		delay(driver, "id", app_object, 30);
-		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + bundleid + " 앱 실행 완료");
+		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "'" + bundleid + "'" + " 앱 실행 완료");
 	}
 	
 	public int delay(IOSDriver<IOSElement> driver, String object_type, String object_name, int minute) {
@@ -223,11 +194,22 @@ public class func_appium_ios {
 			if(object_type == "id") {
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(object_name)));
 			}
+			
 			else if(object_type == "xpath") {
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(object_name)));
 			}
+			
+			else if(object_type == "IosClassChain") {
+				System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + 1);
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(object_name)));
+				System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + 2);
+			}
+			
+			else if(object_type == "IosNsPredicate") {
+				
+			}
 		}catch (Exception e) {
-			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "객체를 찾지 못했습니다.");
+			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "'" + object_name + "'" + " 객체를 찾지 못했습니다.");
 			result = 1;
 		}
 		
@@ -248,9 +230,11 @@ public class func_appium_ios {
 				
 		MobileElement app_setting_btn = (MobileElement) driver.findElementByAccessibilityId("btn setting blue");
 		app_setting_btn.click();
+		sleep(driver, 1);
 		
 		MobileElement ip_port_setting = (MobileElement) driver.findElementByAccessibilityId("btn_setting_change");
 		ip_port_setting.click();
+		sleep(driver, 1);
 		
 		MobileElement tf_server_pp_ip = (MobileElement) driver.findElementByAccessibilityId("tf_server_pp_ip");
 		tf_server_pp_ip.clear();
@@ -288,117 +272,145 @@ public class func_appium_ios {
 		
 		else if (login_type == 2) {
 			sleep(driver, 1);
-			delay(driver, "id", "kr.co.soosan.vpn.client.v10:id/textinput_helper_text", 10);
+			delay(driver, "id", "tf_otp_pp_key", 10);
 			
-			MobileElement btnIssueOTPNumber = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/btnIssueOTPNumber");
-			btnIssueOTPNumber.click();
+			driver.findElementByAccessibilityId("OTP 전송").click();
 			
-			delay(driver, "id", "android:id/contentPanel", 10);
+			start_app(driver, "com.excelsis.querydb", "test");
 			
-			MobileElement send_confirm_btn = (MobileElement) driver.findElementById("android:id/button1");
-			send_confirm_btn.click();
+			driver.findElementByAccessibilityId("test").click();
 			
-			//start_app(driver, "com.sise15.mysqlviewer", "com.sise15.mysqlviewer.MainActivity","com.sise15.mysqlviewer:id/textView2");
+			sleep(driver, 2);
 			
-			MobileElement textView2 = (MobileElement) driver.findElementById("com.sise15.mysqlviewer:id/textView2");
-			textView2.click();
+			driver.findElementByAccessibilityId("select").click();
 			
-			delay(driver, "xpath", "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.TextView", 30);
+			sleep(driver, 2);
 			
-			sleep(driver, 1);
+			String otp_var = driver.findElementByIosNsPredicate("value CONTAINS '['").getAttribute("value");
+			otp_var = otp_var.replace("[", "");
+			otp_var = otp_var.replace("]", "");
 			
-			MobileElement table_select = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.TextView");
-			table_select.click();
-			
-			delay(driver, "id", "com.sise15.mysqlviewer:id/query", 30);
+			driver.findElementByIosClassChain("**/XCUIElementTypeButton[`label == \"test\"`]").click();
 			
 			sleep(driver, 1);
 			
-			MobileElement query_edit = (MobileElement) driver.findElementById("com.sise15.mysqlviewer:id/query");
-			query_edit.sendKeys("select * from smstest");
-			MobileElement done = (MobileElement) driver.findElementByAccessibilityId("Done");
-			done.click();
+			driver.findElementByAccessibilityId("delete").click();
 			
-			delay(driver, "xpath", "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.HorizontalScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/android.widget.TextView[1]", 30);
+			delay(driver, "id", "Result: 1 row(s) affected.", 5);
 			
-			sleep(driver, 1);
+			driver.terminateApp("com.excelsis.querydb");
 			
-			MobileElement otp_key_db = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.HorizontalScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/android.widget.TextView[1]");
-			String otpvar = otp_key_db.getText().replace("[", "");
-			otpvar = otpvar.replace("]", "");
+			driver.activateApp("com.soosanint.ewalker.vpn.v10");
 			
-			query_edit.clear();
-			query_edit.sendKeys("delete from smstest");
-			done.click();
+			delay(driver, "id", "tf_otp_pp_key", 5);
 			
-			driver.terminateApp("com.sise15.mysqlviewer");
+			driver.findElementByAccessibilityId("tf_otp_pp_key").sendKeys(otp_var);
 			
-			delay(driver, "id", "kr.co.soosan.vpn.client.v10:id/editOTPNumber", 10);
-			
-			sleep(driver, 1);
-			
-			MobileElement editOTPKey = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/editOTPNumber");
-			editOTPKey.sendKeys(otpvar);
-			
-			MobileElement otp_confirm_btn = (MobileElement) driver.findElementById("android:id/button1");
-			otp_confirm_btn.click();
+			driver.findElementByAccessibilityId("btn_otp_pp_ok").click();
 			
 		}
 		
 		else if (login_type == 3) {
-			delay(driver, "id", "kr.co.soosan.vpn.client.v10:id/editOTPNumber", 10);
+			delay(driver, "id", "tf_otp_pp_key", 10);
 			
-			//start_app(driver, "com.sgn.secureguardotplite", "com.sgn.sgotp.activity.SplashActivity","com.sgn.secureguardotplite:id/textOtp");
+			start_app(driver, "com.sgn.SGOTP2Lite", "top icon info white x3");
 			
-			MobileElement otp_var = (MobileElement) driver.findElementById("com.sgn.secureguardotplite:id/textOtp");
-			String otpvar = otp_var.getText();
+			MobileElement otp_var = (MobileElement) driver.findElementByIosClassChain("**/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther[3]/XCUIElementTypeStaticText");
+			
+			//인증번호 값을 받을 수 없기 때문에 길게 눌러서 클립보드 복사 기능으로 대체
+			LongPressOptions longPressOptions = new LongPressOptions();
+			longPressOptions.withDuration(Duration.ofSeconds(2)).withElement(ElementOption.element(otp_var));
+			
+			TouchAction action = new TouchAction(driver);
+			action.longPress(longPressOptions).release().perform();
+			
+			delay(driver, "id", "확인", 3);
+			driver.findElementByAccessibilityId("확인").click();
+			
+			driver.terminateApp("com.sgn.SGOTP2Lite");
+			
+			driver.activateApp("com.soosanint.ewalker.vpn.v10");
+			delay(driver, "id", "붙여넣기 허용", 3);
+			driver.findElementByAccessibilityId("붙여넣기 허용").click();
+			
+			delay(driver, "id", "tf_otp_pp_key", 3);
+			driver.findElementByAccessibilityId("tf_otp_pp_key").click();
+			sleep(driver, 1);
+			driver.findElementByIosClassChain("**/XCUIElementTypeStaticText[`label == \"붙여넣기\"`]").click();
 
-			driver.terminateApp("com.sgn.secureguardotplite");
-			
-			delay(driver, "id", "kr.co.soosan.vpn.client.v10:id/editOTPNumber", 10);
-			
-			MobileElement editOTPKey = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/editOTPNumber");
-			editOTPKey.sendKeys(otpvar);
-			
-			MobileElement otp_confirm_btn = (MobileElement) driver.findElementById("android:id/button1");
-			otp_confirm_btn.click();
+			driver.findElementByAccessibilityId("확인").click();
 		}
 		
 		else if (login_type == 4) {
-			delay(driver, "id", "kr.co.soosan.vpn.client.v10:id/editOTPNumber", 10);
+			delay(driver, "id", "tf_otp_pp_key", 10);
 			
-			activate_app(driver, "com.dreammirae.anyauth.android", "com.dreammirae.anyauth.android:id/txt_pattern_info");
+			activate_app(driver, "com.dreammirae.anyauth.ios", "패턴 그리기");
 			
+			/*
 			TouchAction actionOne = new TouchAction(driver);
-			actionOne.press(PointOption.point(184, 968)).moveTo(PointOption.point(904, 968)).moveTo(PointOption.point(904, 1688)).release();
+			actionOne.press(PointOption.point(98, 333)).moveTo(PointOption.point(275, 333)).moveTo(PointOption.point(275, 508)).release();
 			actionOne.perform();
+			*/
 			
-			MobileElement otp_key_mirae = (MobileElement) driver.findElementById("com.dreammirae.anyauth.android:id/otp");
-			String otpvar = otp_key_mirae.getText().replace(" ", "");
+			driver.findElementByIosClassChain("**/XCUIElementTypeButton[`label == \"PIN 입력\"`]").click();
 			
-			driver.terminateApp("com.dreammirae.anyauth.android");
+			sleep(driver, 1);
+			
+			driver.findElementByIosClassChain("**/XCUIElementTypeStaticText[`label == \"1\"`]").click();
+			driver.findElementByIosClassChain("**/XCUIElementTypeStaticText[`label == \"3\"`]").click();
+			driver.findElementByIosClassChain("**/XCUIElementTypeStaticText[`label == \"5\"`]").click();
+			driver.findElementByIosClassChain("**/XCUIElementTypeStaticText[`label == \"7\"`]").click();
+			driver.findElementByIosClassChain("**/XCUIElementTypeStaticText[`label == \"9\"`]").click();
+			driver.findElementByIosClassChain("**/XCUIElementTypeStaticText[`label == \"0\"`]").click();
+			
+			delay(driver, "id", "시간 OTP", 10);
+			
+			TouchAction actionTwo = new TouchAction(driver);
+			actionTwo.tap(PointOption.point(186, 356)).perform();
+			
+			sleep(driver, 1);
+			
+			driver.findElementByIosClassChain("**/XCUIElementTypeStaticText[`label == \"확인\"`]").click();
+			
+			driver.terminateApp("com.dreammirae.anyauth.ios");
 
-			delay(driver, "id", "kr.co.soosan.vpn.client.v10:id/editOTPNumber", 10);
+			driver.activateApp("com.soosanint.ewalker.vpn.v10");
 			
-			MobileElement editOTPKey = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/editOTPNumber");
-			editOTPKey.sendKeys(otpvar);
-			
-			MobileElement otp_confirm_btn = (MobileElement) driver.findElementById("android:id/button1");
-			otp_confirm_btn.click();
+			//delay(driver, "id", "붙여넣기 허용", 3);
+			//System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "1");
+			//driver.findElementByIosClassChain("**/XCUIElementTypeButton[`label == \"붙여넣기 허용\"`]").click();
+			//driver.findElementByIosNsPredicate("name CONTAINS '붙여넣기 허용'").click();
+			//driver.findElementByAccessibilityId("붙여넣기 허용").click();
+			MobileElement allowButton = driver.findElement(MobileBy.AccessibilityId("붙여넣기 허용"));
+			allowButton.click();
+			//System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "2");
+			delay(driver, "id", "tf_otp_pp_key", 3);
+			driver.findElementByAccessibilityId("tf_otp_pp_key").click();
+			sleep(driver, 1);
+			driver.findElementByIosClassChain("**/XCUIElementTypeStaticText[`label == \"붙여넣기\"`]").click();
+
+			driver.findElementByAccessibilityId("확인").click();
 			
 		}
 		
 		// 멀티정책 선택
 		if (select_policy != 0) {
-			delay(driver, "xpath", "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.TextView[1]", 30);
+			delay(driver, "id", "* VPN 서버 접속에 사용할 정책을 선택해주세요.", 30);
 			
 			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "다중 SSL 정책 로그인 시도: " + select_policy + "번 정책");
 			
-			MobileElement redirect_policy_select = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.TextView[" + select_policy + "]");
+			MobileElement redirect_policy_select = (MobileElement) driver.findElementByIosClassChain("**/XCUIElementTypeCell[`label == \"cell_policy_list\"`][" + select_policy + "]/XCUIElementTypeOther[1]/XCUIElementTypeOther");
 			redirect_policy_select.click();
+			
+			driver.findElementByAccessibilityId("btn_policy_pp_ok").click();
+			
+			return result = delay(driver, "id", "Toolbar", 5);
+			//System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + a);
+			//System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + driver.findElementByAccessibilityId("VPN 서버와의 연결이 정상적으로 되었습니다. ").getAttribute("value"));
 		}
 		
-		result = login_confirm(driver, "login");
+		result = delay(driver, "id", "VPN 서버와의 연결이 정상적으로 되었습니다. ", 5);
+		//System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + result);
 		return result;
 	}
 	
@@ -469,9 +481,9 @@ public class func_appium_ios {
 	public void logout_server(IOSDriver<IOSElement> driver) {
 		MobileElement btn_login_ok = (MobileElement) driver.findElementByAccessibilityId("btn_login_ok");
 		btn_login_ok.click();
+		sleep(driver, 1);
 		
-		
-		MobileElement check = (MobileElement) driver.findElementByAccessibilityId("확인");
+		MobileElement check = (MobileElement) driver.findElementByAccessibilityId("aler_ok");
 		check.click();
 		sleep(driver, 1);
 		//login_confirm(driver, "logout");

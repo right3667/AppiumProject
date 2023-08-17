@@ -13,6 +13,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
 import test_case_ios.*;
@@ -66,6 +67,145 @@ public class eWalker_SSL_VPN_iOS_launch {
 		I04_T01 launch_test = new I04_T01();
 		launch_test.I04_T01_case(driver);
 	}
+	
+	@Test(priority = 5)
+	public void I04_T02() {
+		I04_T02 launch_test = new I04_T02();
+		launch_test.I04_T02_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I04_T03() {
+		I04_T03 launch_test = new I04_T03();
+		launch_test.I04_T03_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I04_T04() {
+		I04_T04 launch_test = new I04_T04();
+		launch_test.I04_T04_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I04_T05() {
+		I04_T05 launch_test = new I04_T05();
+		launch_test.I04_T05_case(driver);
+	}
+
+	@Test(priority = 5)
+	public void I04_T06() {
+		I04_T06 launch_test = new I04_T06();
+		launch_test.I04_T06_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I04_T07() {
+		I04_T07 launch_test = new I04_T07();
+		launch_test.I04_T07_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I04_T08() {
+		I04_T08 launch_test = new I04_T08();
+		launch_test.I04_T08_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I05_T01() {
+		I05_T01 launch_test = new I05_T01();
+		launch_test.I05_T01_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I05_T02() {
+		I05_T02 launch_test = new I05_T02();
+		launch_test.I05_T02_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I05_T03() {
+		I05_T03 launch_test = new I05_T03();
+		launch_test.I05_T03_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I05_T04() {
+		I05_T04 launch_test = new I05_T04();
+		launch_test.I05_T04_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I05_T05() {
+		I05_T05 launch_test = new I05_T05();
+		launch_test.I05_T05_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I05_T06() {
+		I05_T06 launch_test = new I05_T06();
+		launch_test.I05_T06_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I05_T07() {
+		I05_T07 launch_test = new I05_T07();
+		launch_test.I05_T07_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I06_T01() {
+		I06_T01 launch_test = new I06_T01();
+		launch_test.I06_T01_case(driver);
+	}
+	
+	
+	@Test(priority = 5)
+	public void I06_T02() {
+		I06_T02 launch_test = new I06_T02();
+		launch_test.I06_T02_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I06_T03() {
+		I06_T03 launch_test = new I06_T03();
+		launch_test.I06_T03_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I06_T05() {
+		I06_T05 launch_test = new I06_T05();
+		launch_test.I06_T05_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I06_T06() {
+		I06_T06 launch_test = new I06_T06();
+		launch_test.I06_T06_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I07_T01() {
+		I07_T01 launch_test = new I07_T01();
+		launch_test.I07_T01_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I07_T03() {
+		I07_T03 launch_test = new I07_T03();
+		launch_test.I07_T03_case(driver);
+	}	
+	
+	@Test(priority = 5)
+	public void I07_T04() {
+		I07_T04 launch_test = new I07_T04();
+		launch_test.I07_T04_case(driver);
+	}	
+	
+	@Test(priority = 5)
+	public void I07_T05() {
+		I07_T05 launch_test = new I07_T05();
+		launch_test.I07_T05_case(driver);
+	}	
 	
 	
 	/*
@@ -133,7 +273,7 @@ public class eWalker_SSL_VPN_iOS_launch {
 		capabilities.setCapability("automationName","xcuitest");
 	  
 		try {
-			driver = new IOSDriver<IOSElement> (new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+			driver = new IOSDriver<IOSElement> (new URL("http://127.0.0.1:4723/"), capabilities);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

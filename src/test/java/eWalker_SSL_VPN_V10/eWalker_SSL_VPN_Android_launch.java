@@ -354,15 +354,15 @@ public class eWalker_SSL_VPN_Android_launch {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 	  
 		capabilities.setCapability("platformName","Android");
+		capabilities.setCapability("automationName","uiautomator2");
 		capabilities.setCapability("deviceName","SM-G991N");
-		capabilities.setCapability("uuid","R3CRC0MAAKN");
-		capabilities.setCapability("platformversion","12");
+		//capabilities.setCapability("platformversion","12");
 		//HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
 		//browserstackOptions.put("enableBiometric", "true");
 		
 		
 		try {
-			driver = new AndroidDriver<AndroidElement> (new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+			driver = new AndroidDriver<AndroidElement> (new URL("http://127.0.0.1:4723/"), capabilities);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -8,7 +8,6 @@ import java.util.Date;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import function.func_appium_android;
 import function.func_selenium;
@@ -28,12 +27,10 @@ public class A03_T03 {
 		//웹 설정
 		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 		
-    	ChromeOptions options = new ChromeOptions();
+		ChromeOptions options = new ChromeOptions();
     	options.setBinary("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome");
-    	
     	WebDriver webdriver = new ChromeDriver(options);
-    	WebDriverWait wait = new WebDriverWait(webdriver, 10);
-		
+    	
 		String server_ip = "172.16.150.20";
 		String user_id = "pw_expired";
 		String old_pw = "admin123!";
@@ -42,19 +39,18 @@ public class A03_T03 {
 				
 		web_func.pw_expire(webdriver, server_ip, user_id, old_pw);
 		web_func.logout_manager(webdriver);
+		
 		webdriver.close();
-
-		app_func.sleep(driver, 3);
+		
+		app_func.sleep(driver, 1);
 		
 		app_func.start_app(driver, "kr.co.soosan.vpn.client.v10", "kr.co.soosan.vpn.client.v10.MainActivity", "kr.co.soosan.vpn.client.v10:id/action_info");
 		app_func.connect_server(driver, "172.16.150.21", "443");
 		
-		MobileElement user_id_edit1 = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/editUserID");
-		user_id_edit1.sendKeys(user_id);
-		MobileElement user_pw_edit1 = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/editPassword");
-		user_pw_edit1.sendKeys(old_pw);
-		MobileElement login_btn1 = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/btnConnect");
-		login_btn1.click();
+		driver.findElementById("kr.co.soosan.vpn.client.v10:id/editUserID").sendKeys(user_id);
+		driver.findElementById("kr.co.soosan.vpn.client.v10:id/editPassword").sendKeys(old_pw);
+		driver.findElementById("kr.co.soosan.vpn.client.v10:id/btnConnect").click();
+
 		app_func.sleep(driver, 2);
 		//패스워드 변경 테스트
 		
@@ -72,12 +68,10 @@ public class A03_T03 {
 		app_func.change_pw(driver, "admin1asd23!!", new_pw, new_pw);
 		
 		//3. '새로운 비밀번호', '다시 입력' 이 서로 다를 경우 변경되지 않음 확인
-		MobileElement user_id_edit2 = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/editUserID");
-		user_id_edit2.sendKeys(user_id);
-		MobileElement user_pw_edit2 = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/editPassword");
-		user_pw_edit2.sendKeys(old_pw);
-		MobileElement login_btn2 = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/btnConnect");
-		login_btn2.click();
+		driver.findElementById("kr.co.soosan.vpn.client.v10:id/editUserID").sendKeys(user_id);
+		driver.findElementById("kr.co.soosan.vpn.client.v10:id/editPassword").sendKeys(old_pw);
+		driver.findElementById("kr.co.soosan.vpn.client.v10:id/btnConnect").click();
+		
 		app_func.sleep(driver, 2);
 		app_func.change_pw(driver, old_pw, "admin123!!!", "admin123!");
 		
@@ -86,6 +80,8 @@ public class A03_T03 {
 		app_func.change_pw(driver, old_pw, new_pw, new_pw);
 
 		app_func.login_server(driver, user_id, new_pw, 0, 0);
+		
+		app_func.connect_ping_chk(driver, "30.0.0.5");
 		
 		app_func.logout_server(driver);
 		

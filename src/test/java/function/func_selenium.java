@@ -59,7 +59,7 @@ public class func_selenium {
 	}
 	
 	public void encryption_algorithm(WebDriver driver, String name) {
-		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + "암호 알고리즘 변경: " + name);
+		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "암호 알고리즘 변경: " + name);
 		frame_mv(driver, "leftFrame");
     	driver.findElement(By.xpath("//*[@id=\"menu\"]/li[1]/a/img")).click();
     	    	  	
@@ -103,8 +103,7 @@ public class func_selenium {
 
     	wait.until(ExpectedConditions.alertIsPresent());
     	driver.switchTo().alert().accept();  	
-    	System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + "암호 알고리즘 변경 완료");
-		
+    	System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "암호 알고리즘 변경 완료");
 	}
 	
 	public void frame_mv(WebDriver driver, String frame_name) {
@@ -193,7 +192,7 @@ public class func_selenium {
 	}
 	
 	 public void pw_expire(WebDriver driver, String server_ip, String user_id, String old_pw) {
-		 System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + "패스워드 만료 설정 실행");
+		 System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "패스워드 만료 설정 실행");
 			
 		 WebDriverWait wait = new WebDriverWait(driver, 10);
 			
@@ -242,7 +241,7 @@ public class func_selenium {
     	driver.switchTo().alert().accept();
     	
     	driver.switchTo().defaultContent();
-    	System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + "패스워드 만료 설정 완료");
+		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "패스워드 만료 설정 완료");
     }
 }
 

@@ -3,7 +3,6 @@ package function;
 import java.text.SimpleDateFormat;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -325,6 +324,7 @@ public class func_appium_android {
 		}
 		
 		// 멀티정책 선택
+		
 		if (select_policy != 0) {
 			delay(driver, "xpath", "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.TextView[1]", 30);
 			
@@ -333,8 +333,8 @@ public class func_appium_android {
 			MobileElement redirect_policy_select = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.TextView[" + select_policy + "]");
 			redirect_policy_select.click();
 		}
-		
-		if (delay(driver, "id", "android:id/message", 2) == 0) {	
+
+		if (delay(driver, "id", "android:id/message", 2) == 0) {
 			MobileElement message = (MobileElement) driver.findElementById("android:id/message");
 			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "로그인 메시지 : " + message.getText());
 			MobileElement button = (MobileElement) driver.findElementById("android:id/button1");
@@ -446,16 +446,18 @@ public class func_appium_android {
 	
 	public int delay(AndroidDriver<AndroidElement> driver, String object_type, String object_name, int minute) {
 		
-		int result = 0;
+		int result = 1;
 		
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, minute);
 			
 			if(object_type == "id") {
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(object_name)));
+				result = 0;
 			}
 			else if(object_type == "xpath") {
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(object_name)));
+				result = 0;
 			}
 		}catch (Exception e) {
 			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "객체를 찾지 못했습니다.");
