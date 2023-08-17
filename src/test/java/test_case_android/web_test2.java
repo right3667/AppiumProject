@@ -3,43 +3,61 @@ package test_case_android;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import function.func_selenium;
-import io.github.bonigarcia.wdm.WebDriverManager;
  
-public class A03_T03_webconf {
+public class web_test2 {
 
-    WebDriver driver = new ChromeDriver();
-    WebDriverWait wait = new WebDriverWait(driver, 10);
+    //WebDriver driver = new ChromeDriver();
+    //WebDriverWait wait = new WebDriverWait(driver, 10);
     
     //func_selenium func = new func_selenium();
     
-    func_selenium func = new func_selenium();
+    //func_selenium func = new func_selenium();
     
     //Properties
-    public String WEB_DRIVER_ID = "webdriver.chromedriver";
-    public String WEB_DRIVER_PATH = "/usr/bin/chromedriver";
-    //public String server_ip = "192.168.35.30"; // 테스트
-    public String server_ip = "172.16.150.20"; //자동화 실제
-    public int server_ip_division = 20;
-    public String encryption_algorithm = "SEED";
+    //public String WEB_DRIVER_ID = "webdriver.chromedriver";
+    //public String WEB_DRIVER_PATH = "/usr/bin/chromedriver";
+    public String server_ip = "192.168.35.30";
+    //public int server_ip_division = 30;
     
     public static void main(String[] args) {
-    	WebDriverManager.chromedriver().setup();
+    	//WebDriverManager.chromedriver().setup();
     	
-    	A03_T03_webconf selTest = new A03_T03_webconf();
-        //selTest.encryption_algorithm();
-    	
-    	selTest.pw_expire();
+    	web_test2 selTest = new web_test2();
+        selTest.pw_expire();
     }
     
     public void pw_expire() {
-    	WebDriverManager.chromedriver().setup();
-     	//driver.manage().timeouts().implicitlyWait(1,  TimeUnit.SECONDS);
+    	
+    	System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+    	
+    	ChromeOptions options = new ChromeOptions();
+    	options.setBinary("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome");
+    	
+    	WebDriver driver = new ChromeDriver(options);
+    	driver.get("https://www.naver.com");
+    	//driver.manage().timeouts().implicitlyWait(1,  TimeUnit.SECONDS);
     	//get page (= 브라우저에서 url을 주소창에 넣은 후 request 한 것과 같다)
-    	func.login_manager(driver, server_ip);
+    	//driver.get("https://" + server_ip + ":9000");
+    	
+    	//
+    	//driver.findElement(By.id("details-button")).click();
+    	//driver.findElement(By.id("proceed-link")).click();
+        	    	
+    	//관리자 로그인
+    	//WebElement frames = driver.findElement(By.cssSelector("frame"));
+    	/*
+    	\func.frame_mv(driver, "start");
+		
+    	WebElement manager_id = driver.findElement(By.id("adminid"));
+    	manager_id.sendKeys("manager");
+    	Actions actions = new Actions(driver);
+    	actions.sendKeys(Keys.TAB).sendKeys("admin123!").perform();
+    	driver.findElement(By.className("login")).click();
+    	driver.switchTo().defaultContent();
     	
     	//[오브젝트 > 사용자] 이동
     	func.frame_mv(driver, "leftFrame");
@@ -57,8 +75,8 @@ public class A03_T03_webconf {
     	
     	driver.findElement(By.xpath("//*[@id=\"content-area\"]/div[3]/table/tbody/tr/td[3]/a")).click();
     	
-    	driver.findElement(By.id("pwd")).sendKeys("admin123!");
-    	driver.findElement(By.id("pwd_chk")).sendKeys("admin123!");
+    	driver.findElement(By.id("pwd")).sendKeys("admin123!!");
+    	driver.findElement(By.id("pwd_chk")).sendKeys("admin123!!");
     	
     	driver.findElement(By.xpath("//*[@id=\"content-area\"]/div[2]/strong/span/img")).click();
     	
@@ -77,15 +95,13 @@ public class A03_T03_webconf {
     	
     	wait.until(ExpectedConditions.alertIsPresent());
     	driver.switchTo().alert().accept();
+    	
     	wait.until(ExpectedConditions.alertIsPresent());
     	driver.switchTo().alert().accept();
+    	*/
     	
-    	driver.switchTo().defaultContent();
-		
-    	//로그아웃
-    	func.logout_manager(driver);
-
-    	/*
+    	
+        /*
         for (WebElement frame : frames0) {
             System.out.println(frame.getAttribute("name"));
     	}
@@ -108,16 +124,7 @@ public class A03_T03_webconf {
     	//app_info_btn.click();
     	//System.out.println(driver.getPageSource());
         
-      	driver.close();
-    }
-    public void encryption_algorithm() {
-    	WebDriverManager.chromedriver().setup();
-     	
-    	func.login_manager(driver, server_ip);
-    	
-        func.encryption_algorithm(driver, encryption_algorithm);
-    	
-        func.logout_manager(driver);
+      	//driver.close();
     }
 }
 
