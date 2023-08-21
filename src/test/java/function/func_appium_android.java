@@ -460,7 +460,7 @@ public class func_appium_android {
 				result = 0;
 			}
 		}catch (Exception e) {
-			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "객체를 찾지 못했습니다.");
+			//System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "객체를 찾지 못했습니다.");
 			result = 1;
 		}
 		
