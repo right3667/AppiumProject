@@ -205,8 +205,25 @@ public class eWalker_SSL_VPN_iOS_launch {
 	public void I07_T05() {
 		I07_T05 launch_test = new I07_T05();
 		launch_test.I07_T05_case(driver);
-	}	
+	}
 	
+	@Test(priority = 5)
+	public void I08_T01() {
+		I08_T01 launch_test = new I08_T01();
+		launch_test.I08_T01_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I08_T03() {
+		I08_T03 launch_test = new I08_T03();
+		launch_test.I08_T03_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I08_T04() {
+		I08_T04 launch_test = new I08_T04();
+		launch_test.I08_T04_case(driver);
+	}
 	
 	/*
 	 * 

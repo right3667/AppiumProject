@@ -16,7 +16,7 @@ import io.appium.java_client.touch.LongPressOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
 
-public class func_appium_ios {
+public class func_appium_mac {
 
 	public static void main(String[] args) {
 	}

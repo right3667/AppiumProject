@@ -3,14 +3,14 @@ package test_case_mac;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import function.func_appium_ios;
+import function.func_appium_mac;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
 
 public class M01_T01 {
 	
-	func_appium_ios app_func = new func_appium_ios();
+	func_appium_mac app_func = new func_appium_mac();
 	
 	Date date_now = new Date(System.currentTimeMillis());
 	
