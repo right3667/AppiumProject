@@ -10,18 +10,20 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import function.func_appium_ios;
-import function.func_selenium;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import resouce.func_appium_ios;
+import resouce.func_selenium;
 
 public class I03_T03 {
 	func_selenium web_func = new func_selenium();
 	func_appium_ios app_func = new func_appium_ios();
 		
 	Date date_now = new Date(System.currentTimeMillis());
+	
+	String server_ip = "172.16.150.21";
+	String server_port = "443";
 	
 	public void I03_T03_case(IOSDriver<IOSElement> driver) {
 		app_func.sleep(driver, 3);
@@ -36,20 +38,22 @@ public class I03_T03 {
     	WebDriver webdriver = new ChromeDriver(options);
     	WebDriverWait wait = new WebDriverWait(webdriver, 10);
 		
-		String server_ip = "172.16.150.20";
 		String user_id = "pw_expired";
 		String old_pw = "admin123!";
 		String new_pw = "admin123!!";
 		
 		web_func.pw_expire(webdriver, server_ip, user_id, old_pw);
-		web_func.logout_manager(webdriver);
 		webdriver.close();
 		
 		app_func.sleep(driver, 3);
 
-		app_func.start_app(driver, "com.soosanint.ewalker.vpn.v10", "btn info blue");
+		app_func.start_app(driver, "com.soosanint.ewalker.vpn.v10", "top icon info");
 		
-		app_func.connect_server(driver, "172.16.150.21", "443");
+		if (app_func.login_confirm(driver, "login") == 0) {
+			app_func.logout_server(driver);
+		}
+		
+		app_func.connect_server(driver, server_ip, server_port);
 		
 		MobileElement tf_login_id = (MobileElement) driver.findElementByAccessibilityId("tf_login_id");
 		tf_login_id.clear();

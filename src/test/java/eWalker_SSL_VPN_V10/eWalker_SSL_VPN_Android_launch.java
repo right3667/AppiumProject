@@ -12,65 +12,21 @@ import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import test_case_android.A01_T01;
-import test_case_android.A02_T01;
-import test_case_android.A02_T02;
-import test_case_android.A02_T03;
-import test_case_android.A02_T05;
-import test_case_android.A03_T01;
-import test_case_android.A03_T02;
-import test_case_android.A03_T03;
-import test_case_android.A04_T01;
-import test_case_android.A04_T02;
-import test_case_android.A04_T03;
-import test_case_android.A04_T04;
-import test_case_android.A04_T05;
-import test_case_android.A04_T06;
-import test_case_android.A04_T07;
-import test_case_android.A04_T08;
-import test_case_android.A04_T09;
-import test_case_android.A05_T01;
-import test_case_android.A05_T02;
-import test_case_android.A05_T03;
-import test_case_android.A05_T04;
-import test_case_android.A05_T05;
-import test_case_android.A05_T06;
-import test_case_android.A05_T07;
-import test_case_android.A06_T01;
-import test_case_android.A06_T02;
-import test_case_android.A06_T03;
-import test_case_android.A06_T05;
-import test_case_android.A06_T06;
-import test_case_android.A07_T01;
-import test_case_android.A07_T03;
-import test_case_android.A07_T04;
-import test_case_android.A07_T05;
-import test_case_android.A08_T01;
-import test_case_android.A08_T04;
-import test_case_android.A08_T05;
-import test_case_android.A09_T01;
-import test_case_android.A09_T03;
-import test_case_android.A09_T04;
-import test_case_android.A09_T05;
-import test_case_android.A10_T01;
-import test_case_android.A10_T03;
-import test_case_android.A10_T04;
-import test_case_android.A10_T05;
-import test_case_android.A11_T01;
-import test_case_android.A11_T02;
-
+import test_case_android.*;
 
 public class eWalker_SSL_VPN_Android_launch {
 	
 	AndroidDriver<AndroidElement> driver;
 	Date date_now = new Date(System.currentTimeMillis());
-	/*
+	
+	
+/*
 	@Test(priority = 1)
-	public void A00() throws IOException {
+	public void A00() {
 		A00 launch_test = new A00();
-		launch_test.A00(driver);
+		launch_test.A00_test(driver);
 	}
-	*/
+*/	
 	
 	@Test(priority = 0)
 	public void A01_T01() {
@@ -120,6 +76,39 @@ public class eWalker_SSL_VPN_Android_launch {
 		A03_T03 launch_test = new A03_T03();
 		launch_test.A03_T03_case(driver);
 	}
+	
+	/*
+	@Test(priority = 6)
+	public void A03_T04() {
+		A03_T04 launch_test = new A03_T04();
+		launch_test.A03_T04_case(driver);
+	}
+	*/
+	
+	@Test(priority = 6)
+	public void A03_T05() {
+		A03_T05 launch_test = new A03_T05();
+		launch_test.A03_T05_case(driver);
+	}
+	
+	@Test(priority = 6)
+	public void A03_T06() {
+		A03_T06 launch_test = new A03_T06();
+		launch_test.A03_T06_case(driver);
+	}
+	
+	@Test(priority = 6)
+	public void A03_T07() {
+		A03_T07 launch_test = new A03_T07();
+		launch_test.A03_T07_case(driver);
+	}
+	
+	@Test(priority = 6)
+	public void A03_T08() {
+		A03_T08 launch_test = new A03_T08();
+		launch_test.A03_T08_case(driver);
+	}
+		
 	
 	@Test(priority = 6)
 	public void A04_T01() {
@@ -236,6 +225,7 @@ public class eWalker_SSL_VPN_Android_launch {
 	}
 
 	@Test(priority = 18)
+
 	public void A06_T05() {
 		A06_T05 launch_test = new A06_T05();
 		launch_test.A06_T05_case(driver);

@@ -5,10 +5,10 @@ import static org.testng.Assert.assertTrue;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import function.func_appium_ios;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
+import resouce.func_appium_ios;
 
 public class M03_T02 {
 	

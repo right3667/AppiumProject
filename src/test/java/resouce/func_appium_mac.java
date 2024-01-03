@@ -1,4 +1,4 @@
-package function;
+package resouce;
 
 import java.text.SimpleDateFormat;
 import java.time.Duration;

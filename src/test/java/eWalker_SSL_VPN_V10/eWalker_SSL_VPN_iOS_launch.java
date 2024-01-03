@@ -13,11 +13,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
 import test_case_ios.*;
-
 
 public class eWalker_SSL_VPN_iOS_launch {
 	
@@ -42,6 +40,12 @@ public class eWalker_SSL_VPN_iOS_launch {
 		launch_test.I02_T02_case(driver);
 	}
 
+	@Test(priority = 2)
+	public void I02_T03() {
+		I02_T03 launch_test = new I02_T03();
+		launch_test.I02_T03_case(driver);
+	}
+	
 	@Test(priority = 3)
 	public void I03_T01() {
 		I03_T01 launch_test = new I03_T01();
@@ -60,7 +64,36 @@ public class eWalker_SSL_VPN_iOS_launch {
 		I03_T03 launch_test = new I03_T03();
 		launch_test.I03_T03_case(driver);
 	}
+
+	@Test(priority = 5)
+	public void I03_T04() {
+		I03_T04 launch_test = new I03_T04();
+		launch_test.I03_T04_case(driver);
+	}
 	
+	@Test(priority = 5)
+	public void I03_T05() {
+		I03_T05 launch_test = new I03_T05();
+		launch_test.I03_T05_case(driver);
+	}
+
+	@Test(priority = 5)
+	public void I03_T06() {
+		I03_T06 launch_test = new I03_T06();
+		launch_test.I03_T06_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I03_T07() {
+		I03_T07 launch_test = new I03_T07();
+		launch_test.I03_T07_case(driver);
+	}
+
+	@Test(priority = 5)
+	public void I03_T08() {
+		I03_T08 launch_test = new I03_T08();
+		launch_test.I03_T08_case(driver);
+	}
 	
 	@Test(priority = 5)
 	public void I04_T01() {
@@ -184,6 +217,12 @@ public class eWalker_SSL_VPN_iOS_launch {
 	}
 	
 	@Test(priority = 5)
+	public void I06_T07() {
+		I06_T07 launch_test = new I06_T07();
+		launch_test.I06_T07_case(driver);
+	}
+	
+	@Test(priority = 5)
 	public void I07_T01() {
 		I07_T01 launch_test = new I07_T01();
 		launch_test.I07_T01_case(driver);
@@ -196,7 +235,7 @@ public class eWalker_SSL_VPN_iOS_launch {
 	}	
 	
 	@Test(priority = 5)
-	public void I07_T04() {
+ 	public void I07_T04() {
 		I07_T04 launch_test = new I07_T04();
 		launch_test.I07_T04_case(driver);
 	}	
@@ -205,6 +244,12 @@ public class eWalker_SSL_VPN_iOS_launch {
 	public void I07_T05() {
 		I07_T05 launch_test = new I07_T05();
 		launch_test.I07_T05_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I07_T06() {
+		I07_T06 launch_test = new I07_T06();
+		launch_test.I07_T06_case(driver);
 	}
 	
 	@Test(priority = 5)
@@ -225,6 +270,90 @@ public class eWalker_SSL_VPN_iOS_launch {
 		launch_test.I08_T04_case(driver);
 	}
 	
+	@Test(priority = 5)
+	public void I08_T05() {
+		I08_T05 launch_test = new I08_T05();
+		launch_test.I08_T05_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I08_T06() {
+		I08_T06 launch_test = new I08_T06();
+		launch_test.I08_T06_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I09_T01() {
+		I09_T01 launch_test = new I09_T01();
+		launch_test.I09_T01_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I09_T03() {
+		I09_T03 launch_test = new I09_T03();
+		launch_test.I09_T03_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I09_T04() {
+		I09_T04 launch_test = new I09_T04();
+		launch_test.I09_T04_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I09_T05() {
+		I09_T05 launch_test = new I09_T05();
+		launch_test.I09_T05_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I09_T06() {
+		I09_T06 launch_test = new I09_T06();
+		launch_test.I09_T06_case(driver);
+	}
+
+	@Test(priority = 5)
+	public void I10_T01() {
+		I10_T01 launch_test = new I10_T01();
+		launch_test.I10_T01_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I10_T03() {
+		I10_T03 launch_test = new I10_T03();
+		launch_test.I10_T03_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I10_T04() {
+		I10_T04 launch_test = new I10_T04();
+		launch_test.I10_T04_case(driver);
+	}
+	
+	
+	@Test(priority = 5)
+	public void I10_T05() {
+		I10_T05 launch_test = new I10_T05();
+		launch_test.I10_T05_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I10_T06() {
+		I10_T06 launch_test = new I10_T06();
+		launch_test.I10_T06_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I11_T01() {
+		I11_T01 launch_test = new I11_T01();
+		launch_test.I11_T01_case(driver);
+	}
+	
+	@Test(priority = 5)
+	public void I11_T02() {
+		I11_T02 launch_test = new I11_T02();
+		launch_test.I11_T02_case(driver);
+	}
 	/*
 	 * 
 	 * 

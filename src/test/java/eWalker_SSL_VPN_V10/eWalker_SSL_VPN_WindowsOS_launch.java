@@ -9,22 +9,24 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.windows.WindowsDriver;
 
 
 public class eWalker_SSL_VPN_WindowsOS_launch {
 	
 	
 	Date date_now = new Date(System.currentTimeMillis());
-	AppiumDriver driver;
+	WindowsDriver driver;
 
 	
 	//driver = 
 	
 	@Test(priority = 0)
 	public void I01_T01() {
-		driver.get("SVMClient");
+		//driver.get("C:\\Windows\\System32\\notepad.exe");
         
+		
+		
 		try {
 			Thread.sleep(2000); //1초 대기
 		} catch (InterruptedException e) {
@@ -32,7 +34,7 @@ public class eWalker_SSL_VPN_WindowsOS_launch {
 		}
 		
 
-		driver.findElementByXPath("/AXApplication[@AXTitle='SVMClient']/AXWindow[@AXTitle='SVMClient' and @AXIdentifier='_NS:8' and @AXSubrole='AXStandardWindow']/AXButton[@AXTitle='  Login' and @AXIdentifier='_NS:155']").click();
+		
 	
 	}
 
@@ -65,12 +67,13 @@ public class eWalker_SSL_VPN_WindowsOS_launch {
 	@BeforeTest
   	public void beforeTest() {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-	  
-		capabilities.setCapability("platformName","Mac");
-		capabilities.setCapability("deviceName","Mac");
+		capabilities.setCapability("app", "C:\\\\Windows\\\\System32\\\\notepad.exe");
+		capabilities.setCapability("platformName","Windows");
+		capabilities.setCapability("platformVersion","10");
+		capabilities.setCapability("deviceName", "DESKTOP-HFMB9S6");
 		
 		try {
-			driver = new AppiumDriver (new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+			driver = new WindowsDriver (new URL("http://127.0.0.1:4723/"), capabilities);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

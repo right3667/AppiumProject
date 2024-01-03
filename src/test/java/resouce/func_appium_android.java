@@ -1,4 +1,4 @@
-package function;
+package resouce;
 
 import java.text.SimpleDateFormat;
 
@@ -63,13 +63,11 @@ public class func_appium_android {
 		
 		int result = 1;
 		
-		start_app(driver, "com.android.chrome", "com.google.android.apps.chrome.Main", "com.android.chrome:id/url_bar");
-		
-		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("옵션 더보기");
+		start_app(driver, "com.android.chrome", "com.google.android.apps.chrome.Main", "id", "com.android.chrome:id/url_bar");
+		//MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("옵션 더보기");
+		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("Chrome 맞춤설정 및 제어");
 		el1.click();
-		
 		delay(driver, "id", "com.android.chrome:id/new_incognito_tab_menu_id", 5);
-		
 		MobileElement el2 = (MobileElement) driver.findElementByAccessibilityId("새 시크릿 탭");
 		el2.click();
 		
@@ -114,7 +112,7 @@ public class func_appium_android {
 	public int connect_ping_chk (AndroidDriver<AndroidElement> driver, String host) {
 		int result;
 		
-		start_app(driver, "com.lipinic.ping", "com.lipinic.ping.MainActivity", "com.lipinic.ping:id/editTextHost");
+		start_app(driver, "com.lipinic.ping", "com.lipinic.ping.MainActivity", "id", "com.lipinic.ping:id/editTextHost");
 		
 		MobileElement editTextHost = (MobileElement) driver.findElementById("com.lipinic.ping:id/editTextHost");
 		editTextHost.sendKeys(host);
@@ -182,6 +180,7 @@ public class func_appium_android {
 	}
 	
 	public void logout_server(AndroidDriver<AndroidElement> driver) {
+		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "로그아웃 시도");
 		delay(driver, "id", "kr.co.soosan.vpn.client.v10:id/btnDisconnect", 10);
 		sleep(driver, 1);
 		
@@ -201,15 +200,21 @@ public class func_appium_android {
 		
 		MobileElement unconnect_success_btn = (MobileElement) driver.findElementById("android:id/button1");
 		unconnect_success_btn.click();
+		sleep(driver, 1);
+		
+		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "로그아웃 완료");
 	}
 	
 	public int login_server(AndroidDriver<AndroidElement> driver, String user_id, String user_pw, int login_type, int select_policy) {
 		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "로그인 시도: " + user_id + " / " + user_pw);
 		int result = 1;
 		MobileElement user_id_edit = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/editUserID");
+		//MobileElement user_id_edit = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[1]/android.view.View/android.widget.ScrollView/android.widget.EditText[1]");
 		user_id_edit.sendKeys(user_id);
 		MobileElement user_pw_edit = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/editPassword");
+		//MobileElement user_pw_edit = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[1]/android.view.View/android.widget.ScrollView/android.widget.EditText[2]");
 		user_pw_edit.sendKeys(user_pw);
+		//MobileElement login_btn = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[1]/android.view.View/android.widget.ScrollView/android.view.View[2]/android.widget.Button");
 		MobileElement login_btn = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/btnConnect");
 		login_btn.click();
 		
@@ -233,7 +238,9 @@ public class func_appium_android {
 			MobileElement send_confirm_btn = (MobileElement) driver.findElementById("android:id/button1");
 			send_confirm_btn.click();
 			
-			start_app(driver, "com.sise15.mysqlviewer", "com.sise15.mysqlviewer.MainActivity","com.sise15.mysqlviewer:id/textView2");
+			start_app(driver, "com.sise15.mysqlviewer", "com.sise15.mysqlviewer.MainActivity", "id", "com.sise15.mysqlviewer:id/textView2");
+			
+			sleep(driver, 1);
 			
 			MobileElement textView2 = (MobileElement) driver.findElementById("com.sise15.mysqlviewer:id/textView2");
 			textView2.click();
@@ -251,7 +258,7 @@ public class func_appium_android {
 			
 			MobileElement query_edit = (MobileElement) driver.findElementById("com.sise15.mysqlviewer:id/query");
 			query_edit.sendKeys("select * from smstest");
-			MobileElement done = (MobileElement) driver.findElementByAccessibilityId("Done");
+			MobileElement done = (MobileElement) driver.findElementByAccessibilityId("완료");
 			done.click();
 			
 			delay(driver, "xpath", "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.HorizontalScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/android.widget.TextView[1]", 30);
@@ -283,7 +290,7 @@ public class func_appium_android {
 		else if (login_type == 3) {
 			delay(driver, "id", "kr.co.soosan.vpn.client.v10:id/editOTPNumber", 10);
 			
-			start_app(driver, "com.sgn.secureguardotplite", "com.sgn.sgotp.activity.SplashActivity","com.sgn.secureguardotplite:id/textOtp");
+			start_app(driver, "com.sgn.secureguardotplite", "com.sgn.sgotp.activity.SplashActivity", "id", "com.sgn.secureguardotplite:id/textOtp");
 			
 			MobileElement otp_var = (MobileElement) driver.findElementById("com.sgn.secureguardotplite:id/textOtp");
 			String otpvar = otp_var.getText();
@@ -377,10 +384,11 @@ public class func_appium_android {
 		return result;
 	}
 	
-	public void connect_server(AndroidDriver<AndroidElement> driver, String url_ip, String port) {
+	public int connect_server(AndroidDriver<AndroidElement> driver, String url_ip, String port) {
 		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "서버 접속 시도: " + url_ip + " / " + port);
-		MobileElement app_setting_btn = (MobileElement) driver.findElementByAccessibilityId("Setting");
-		app_setting_btn.click();
+		int result = 1;
+		driver.findElementById("kr.co.soosan.vpn.client.v10:id/setting_menu").click();
+		//driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View[3]/android.widget.Button").click();
 		
 		delay(driver, "xpath", "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.TextView", 30);
 		
@@ -412,24 +420,29 @@ public class func_appium_android {
 		
 		driver.pressKey(new KeyEvent(AndroidKey.BACK));
 		
-		delay(driver, "id", "kr.co.soosan.vpn.client.v10:id/editHost", 30);
+		//delay(driver, "xpath", "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[1]/android.view.View/android.widget.ScrollView/android.view.View[2]/android.widget.Button", 30);
+		delay(driver, "id", "kr.co.soosan.vpn.client.v10:id/btnAuth", 30);
+		driver.findElementById("kr.co.soosan.vpn.client.v10:id/btnAuth").click();
+		//driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[1]/android.view.View/android.widget.ScrollView/android.view.View[2]/android.widget.Button").click();
 		
-		MobileElement server_connect_btn = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/btnAuth");
-		server_connect_btn.click();
-		
-		delay(driver, "id", "android:id/button1", 30);
+		if (delay(driver, "id", "android:id/button1", 30) == 0) {
+			result = 0;
+		}
 		MobileElement connect_confirm_btn = (MobileElement) driver.findElementById("android:id/button1");
 		connect_confirm_btn.click();
 		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "서버 접속 완료");
 		
+		return result;
 	}
 	
-	public void activate_app(AndroidDriver<AndroidElement> driver, String app_name, String app_object) {
+	public int activate_app(AndroidDriver<AndroidElement> driver, String app_name, String app_object) {
+		int result = 1;
 		driver.activateApp(app_name);
-		delay(driver, "id", app_object, 30);
+		result = delay(driver, "id", app_object, 30);
+		return result;
 	}
 	
-	public void start_app(AndroidDriver<AndroidElement> driver, String app_name, String app_activity, String app_object) {
+	public void start_app(AndroidDriver<AndroidElement> driver, String app_name, String app_activity, String object_type, String app_object) {
 		String activity = driver.currentActivity();
 		
 		if (activity.contains("subscreen")) {	// for Z flip device 
@@ -439,8 +452,15 @@ public class func_appium_android {
 		
 		else {
 			driver.startActivity(new Activity(app_name, app_activity));
-			delay(driver, "id", app_object, 30);
+			if (object_type.equals("id")) {
+				delay(driver, "id", app_object, 30);
+			}
+			else if (object_type.equals("xpath")){
+				delay(driver, "xpath", app_object, 30);
+			}
 		}
+		
+		
 		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + app_name + " 앱 실행 완료");
 	}
 	
@@ -480,7 +500,7 @@ public class func_appium_android {
 		sleep(driver, 3);
 		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + "옵션 초기화 실행");
 		
-		start_app(driver, "kr.co.soosan.vpn.client.v10", "kr.co.soosan.vpn.client.v10.MainActivity", "kr.co.soosan.vpn.client.v10:id/action_info");
+		start_app(driver, "kr.co.soosan.vpn.client.v10", "kr.co.soosan.vpn.client.v10.MainActivity", "xpath", "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View[2]/android.widget.Button");
 		
 		MobileElement setting_close_window_off = (MobileElement) driver.findElementByAccessibilityId("Setting");
 		setting_close_window_off.click();

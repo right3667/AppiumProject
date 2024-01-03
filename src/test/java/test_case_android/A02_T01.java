@@ -5,12 +5,12 @@ import static org.testng.Assert.assertTrue;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import function.func_appium_android;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
+import resouce.func_appium_android;
 
 public class A02_T01 {
 	
@@ -22,13 +22,14 @@ public class A02_T01 {
 		app_func.sleep(driver, 3);
 		
 		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + "TC A02_T01 실행");
-		    
-		app_func.start_app(driver, "kr.co.soosan.vpn.client.v10", "kr.co.soosan.vpn.client.v10.MainActivity", "kr.co.soosan.vpn.client.v10:id/action_info");
+		 
+		app_func.start_app(driver, "kr.co.soosan.vpn.client.v10", "kr.co.soosan.vpn.client.v10.MainActivity", "id", "kr.co.soosan.vpn.client.v10:id/action_info");
+		//app_func.start_app(driver, "kr.co.soosan.vpn.client.v10", "kr.co.soosan.vpn.client.v10.MainActivity", "xpath", "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View[2]/android.widget.Button");
 		
-		MobileElement app_setting_btn = (MobileElement) driver.findElementByAccessibilityId("Setting");
+		MobileElement app_setting_btn = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/setting_menu");
 		app_setting_btn.click();
 		
-		app_func.delay(driver, "xpath", "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.TextView", 30);
+		app_func.delay(driver, "xpath", "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.view.ViewGroup/android.widget.TextView", 30);
 		
 		MobileElement host_url_ip = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout");
 		host_url_ip.click();
@@ -58,7 +59,7 @@ public class A02_T01 {
 		
 		driver.pressKey(new KeyEvent(AndroidKey.BACK));
 		
-		app_func.delay(driver, "id", "kr.co.soosan.vpn.client.v10:id/editHost", 30);
+		app_func.delay(driver, "id", "kr.co.soosan.vpn.client.v10:id/action_info", 30);
 		
 		MobileElement enter_ip = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/editHost");
 		MobileElement enter_port = (MobileElement) driver.findElementById("kr.co.soosan.vpn.client.v10:id/editPort");

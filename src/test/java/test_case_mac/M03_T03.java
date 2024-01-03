@@ -10,12 +10,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import function.func_appium_ios;
-import function.func_selenium;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import resouce.func_appium_ios;
+import resouce.func_selenium;
 
 public class M03_T03 {
 	func_selenium web_func = new func_selenium();

@@ -1,4 +1,4 @@
-package function;
+package resouce;
 
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -7,12 +7,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
 import io.appium.java_client.touch.LongPressOptions;
+import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
 
@@ -144,7 +144,8 @@ public class func_appium_ios {
 			try {
 				//WebDriverWait wait = new WebDriverWait(driver, 10);
 				//wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("VPN 연결 종료")));
-				driver.findElementByAccessibilityId("VPN 연결 종료");
+				//driver.findElementByAccessibilityId("VPN 연결 종료");
+				driver.findElementByIosClassChain("**/XCUIElementTypeButton[`label == \"로그아웃\"`]");
 				System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "로그인 확인: 로그인");
 				result = 0;
 			}catch (Exception e) {
@@ -153,10 +154,11 @@ public class func_appium_ios {
 			}
 		}
 		
+		
 		//로그아웃 확인
 		else {
 			try {
-				driver.findElementByAccessibilityId("VPN 서버 접속");
+				driver.findElementByAccessibilityId("로그인");
 				System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "로그인 확인: 로그아웃");
 				result = 0;
 			}catch (Exception e) {
@@ -174,14 +176,24 @@ public class func_appium_ios {
 		delay(driver, "id", app_object, 30);
 	}
 	
-	public void start_app(IOSDriver<IOSElement> driver, String bundleid, String app_object) {
+	public int start_app(IOSDriver<IOSElement> driver, String bundleid, String app_object) {
 		//미래 otp: com.dreammirae.anyauth.ios
 		//eWalker ssl vpn v10: com.soosanint.ewalker.vpn.v10
+		int result = 1;
 		driver.terminateApp(bundleid);
-		
 		driver.activateApp(bundleid);
-		delay(driver, "id", app_object, 30);
-		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "'" + bundleid + "'" + " 앱 실행 완료");
+		if (delay(driver, "id", app_object, 30) == 0) {
+			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "'" + bundleid + "'" + " 앱 실행 완료");
+			result = 0;
+		}
+		
+		else {
+			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "'" + bundleid + "'" + " 앱 실행 실패");
+			result = 1;
+		}
+		sleep(driver, 2);
+		
+		return result;
 	}
 	
 	public int delay(IOSDriver<IOSElement> driver, String object_type, String object_name, int minute) {
@@ -200,9 +212,7 @@ public class func_appium_ios {
 			}
 			
 			else if(object_type == "IosClassChain") {
-				System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + 1);
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(object_name)));
-				System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + 2);
 			}
 			
 			else if(object_type == "IosNsPredicate") {
@@ -225,30 +235,36 @@ public class func_appium_ios {
 		}
 	}
 	
-	public void connect_server(IOSDriver<IOSElement> driver, String url_ip, String port) {
+	public int connect_server(IOSDriver<IOSElement> driver, String url_ip, String port) {
+		int result = 1;
 		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "서버 접속 시도: " + url_ip + " / " + port);
-				
-		MobileElement app_setting_btn = (MobileElement) driver.findElementByAccessibilityId("btn setting blue");
-		app_setting_btn.click();
+		
+		sleep(driver, 1);
+		driver.findElementByAccessibilityId("top icon setting").click();
 		sleep(driver, 1);
 		
-		MobileElement ip_port_setting = (MobileElement) driver.findElementByAccessibilityId("btn_setting_change");
-		ip_port_setting.click();
+		driver.findElementByAccessibilityId("btn_setting_change").click();
 		sleep(driver, 1);
 		
 		MobileElement tf_server_pp_ip = (MobileElement) driver.findElementByAccessibilityId("tf_server_pp_ip");
 		tf_server_pp_ip.clear();
 		tf_server_pp_ip.sendKeys(url_ip);
+		sleep(driver, 1);
+		
 		MobileElement tf_server_pp_port = (MobileElement) driver.findElementByAccessibilityId("tf_server_pp_port");
 		tf_server_pp_port.clear();
 		tf_server_pp_port.sendKeys(port);
-		MobileElement btn_server_pp_ok = (MobileElement) driver.findElementByAccessibilityId("btn_server_pp_ok");
-		btn_server_pp_ok.click();
-		MobileElement Back = (MobileElement) driver.findElementByAccessibilityId("Back");
-		Back.click();
+		sleep(driver, 1);
 		
-		delay(driver, "id", "btn info blue", 30);
+		driver.findElementByAccessibilityId("btn_server_pp_ok").click();
 		
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("Toolbar")));
+		
+		driver.findElementByAccessibilityId("Back").click();
+		
+		result = delay(driver, "id", "top icon setting", 30);
+		return result;
 	}
 	
 	public int login_server(IOSDriver<IOSElement> driver, String user_id, String user_pw, int login_type, int select_policy) {
@@ -264,6 +280,7 @@ public class func_appium_ios {
 		
 		//로그인 형태
 		if (login_type == 0) {
+			result = delay(driver, "id", "Virtual IP", 5);
 		}
 		
 		else if (login_type == 1) {
@@ -308,6 +325,11 @@ public class func_appium_ios {
 			
 			driver.findElementByAccessibilityId("btn_otp_pp_ok").click();
 			
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("Toolbar")));
+					
+			//result = delay(driver, "id", "VPN 서버와의 연결이 정상적으로 되었습니다. ", 5);
+			
 		}
 		
 		else if (login_type == 3) {
@@ -332,6 +354,7 @@ public class func_appium_ios {
 			driver.activateApp("com.soosanint.ewalker.vpn.v10");
 			delay(driver, "id", "붙여넣기 허용", 3);
 			driver.findElementByAccessibilityId("붙여넣기 허용").click();
+			//driver.findElementByIosClassChain("**/XCUIElementTypeOther[`label == \"수평 스크롤 막대, 1페이지\"`][2]").click();
 			
 			delay(driver, "id", "tf_otp_pp_key", 3);
 			driver.findElementByAccessibilityId("tf_otp_pp_key").click();
@@ -339,58 +362,72 @@ public class func_appium_ios {
 			driver.findElementByIosClassChain("**/XCUIElementTypeStaticText[`label == \"붙여넣기\"`]").click();
 
 			driver.findElementByAccessibilityId("확인").click();
+			
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("Toolbar")));
+			
+			//result = delay(driver, "id", "VPN 서버와의 연결이 정상적으로 되었습니다. ", 5);
 		}
 		
 		else if (login_type == 4) {
 			delay(driver, "id", "tf_otp_pp_key", 10);
 			
-			activate_app(driver, "com.dreammirae.anyauth.ios", "패턴 그리기");
 			
-			/*
+			start_app(driver, "com.dreammirae.anyauth.ios", "패턴 그리기");
+			
 			TouchAction actionOne = new TouchAction(driver);
-			actionOne.press(PointOption.point(98, 333)).moveTo(PointOption.point(275, 333)).moveTo(PointOption.point(275, 508)).release();
-			actionOne.perform();
-			*/
-			
-			driver.findElementByIosClassChain("**/XCUIElementTypeButton[`label == \"PIN 입력\"`]").click();
-			
-			sleep(driver, 1);
-			
-			driver.findElementByIosClassChain("**/XCUIElementTypeStaticText[`label == \"1\"`]").click();
-			driver.findElementByIosClassChain("**/XCUIElementTypeStaticText[`label == \"3\"`]").click();
-			driver.findElementByIosClassChain("**/XCUIElementTypeStaticText[`label == \"5\"`]").click();
-			driver.findElementByIosClassChain("**/XCUIElementTypeStaticText[`label == \"7\"`]").click();
-			driver.findElementByIosClassChain("**/XCUIElementTypeStaticText[`label == \"9\"`]").click();
-			driver.findElementByIosClassChain("**/XCUIElementTypeStaticText[`label == \"0\"`]").click();
-			
+			actionOne.longPress(PointOption.point(100, 333)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(100)))
+				.moveTo(PointOption.point(275, 333)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(100)))
+				.moveTo(PointOption.point(275, 509))
+				.release()
+				.perform();
+		
 			delay(driver, "id", "시간 OTP", 10);
 			
-			TouchAction actionTwo = new TouchAction(driver);
-			actionTwo.tap(PointOption.point(186, 356)).perform();
-			
+			String otp_var = driver.findElementByIosNsPredicate("name matches '.[0-9].+' AND name contains ' ' AND type contains 'XCUIElementTypeButton'").getAttribute("name");
+			otp_var = otp_var.replace(" ", "");
 			sleep(driver, 1);
-			
-			driver.findElementByIosClassChain("**/XCUIElementTypeStaticText[`label == \"확인\"`]").click();
 			
 			driver.terminateApp("com.dreammirae.anyauth.ios");
 
 			driver.activateApp("com.soosanint.ewalker.vpn.v10");
 			
-			//delay(driver, "id", "붙여넣기 허용", 3);
-			//System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "1");
-			//driver.findElementByIosClassChain("**/XCUIElementTypeButton[`label == \"붙여넣기 허용\"`]").click();
-			//driver.findElementByIosNsPredicate("name CONTAINS '붙여넣기 허용'").click();
-			//driver.findElementByAccessibilityId("붙여넣기 허용").click();
-			MobileElement allowButton = driver.findElement(MobileBy.AccessibilityId("붙여넣기 허용"));
-			allowButton.click();
-			//System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "2");
 			delay(driver, "id", "tf_otp_pp_key", 3);
-			driver.findElementByAccessibilityId("tf_otp_pp_key").click();
+			driver.findElementByAccessibilityId("tf_otp_pp_key").sendKeys(otp_var);
 			sleep(driver, 1);
-			driver.findElementByIosClassChain("**/XCUIElementTypeStaticText[`label == \"붙여넣기\"`]").click();
+
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			
+			driver.findElementByAccessibilityId("확인").click();
+			
+			//System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "0");
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("Toolbar")));
+			//System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "1");
+			result = delay(driver, "id", "VPN 서버와의 연결이 정상적으로 되었습니다. ", 5);
+		}
+		
+		else if (login_type == 5) {
+			delay(driver, "id", "tf_otp_pp_key", 10);
+			
+			start_app(driver, "com.google.Authenticator", "G_logoo_logoo_logog_logol_logoe_logo Authenticator");
+			
+			String otp_var = driver.findElementByIosNsPredicate("value matches '.[0-9].+' AND value contains ' ' AND type contains 'XCUIElementTypeOther'").getAttribute("value");
+			otp_var = otp_var.replace(" ", "");
+			
+			driver.terminateApp("com.google.Authenticator");
+			
+			driver.activateApp("com.soosanint.ewalker.vpn.v10");
+			
+			delay(driver, "id", "tf_otp_pp_key", 3);
+			driver.findElementByAccessibilityId("tf_otp_pp_key").sendKeys(otp_var);
+			sleep(driver, 1);
 
 			driver.findElementByAccessibilityId("확인").click();
 			
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("Toolbar")));
+					
+			//result = delay(driver, "id", "VPN 서버와의 연결이 정상적으로 되었습니다. ", 5);
 		}
 		
 		// 멀티정책 선택
@@ -409,7 +446,6 @@ public class func_appium_ios {
 			//System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + driver.findElementByAccessibilityId("VPN 서버와의 연결이 정상적으로 되었습니다. ").getAttribute("value"));
 		}
 		
-		result = delay(driver, "id", "VPN 서버와의 연결이 정상적으로 되었습니다. ", 5);
 		//System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + result);
 		return result;
 	}
@@ -463,15 +499,29 @@ public class func_appium_ios {
 		return result;
 	}
 	
-	public void logout_server(IOSDriver<IOSElement> driver) {
-		MobileElement btn_login_ok = (MobileElement) driver.findElementByAccessibilityId("btn_login_ok");
-		btn_login_ok.click();
+	public int logout_server(IOSDriver<IOSElement> driver) {
+		int result = 1;
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		//wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("Toolbar")));
+		//driver.findElementByAccessibilityId("btn_login_ok").click();
+		driver.findElementByIosClassChain("**/XCUIElementTypeStaticText[`label == \"로그아웃\"`]").click();
+		delay(driver, "id", "aler_ok", 5);
+		driver.findElementByAccessibilityId("aler_ok").click();
 		sleep(driver, 1);
+		delay(driver, "id", "aler_ok", 5);
+		driver.findElementByAccessibilityId("aler_ok").click();
+		sleep(driver, 1);
+		if (delay(driver, "id", "top icon setting", 5) == 0) {
+			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "로그아웃 완료");
+			result = 0;
+		}
+		else {
+			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + " -- " + "로그아웃 실패");
+			result = 1;
+		}
 		
-		MobileElement check = (MobileElement) driver.findElementByAccessibilityId("aler_ok");
-		check.click();
-		sleep(driver, 1);
-		//login_confirm(driver, "logout");
+		return result;
+		//wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("top icon setting")));
 	}
 }
 

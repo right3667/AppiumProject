@@ -1,4 +1,4 @@
-package eWalker_SSL_VPN_V10;
+package resouce;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -3,10 +3,10 @@ package test_case_mac;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import function.func_appium_mac;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
+import resouce.func_appium_mac;
 
 public class M01_T01 {
 	

@@ -3,13 +3,44 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="eWalker_SSL_VPN_V10.eWalker_SSL_VPN_iOS_launch">
+      <class name="eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch">
         <methods>
-          <include name="beforeTest"/>
+          <include name="A11_T01"/>
+          <include name="A09_T05"/>
+          <include name="A11_T02"/>
           <include name="afterTest"/>
-          <include name="I06_T05"/>
+          <include name="A03_T01"/>
+          <include name="A04_T09"/>
+          <include name="A03_T03"/>
+          <include name="A04_T08"/>
+          <include name="A03_T02"/>
+          <include name="A04_T07"/>
+          <include name="A03_T05"/>
+          <include name="A04_T06"/>
+          <include name="A04_T05"/>
+          <include name="A10_T05"/>
+          <include name="beforeTest"/>
+          <include name="A06_T01"/>
+          <include name="A05_T05"/>
+          <include name="A02_T05"/>
+          <include name="A05_T04"/>
+          <include name="A05_T07"/>
+          <include name="A05_T06"/>
+          <include name="A05_T01"/>
+          <include name="A05_T03"/>
+          <include name="A05_T02"/>
+          <include name="A06_T06"/>
+          <include name="A03_T07"/>
+          <include name="A04_T04"/>
+          <include name="A03_T06"/>
+          <include name="A04_T03"/>
+          <include name="A04_T02"/>
+          <include name="A08_T05"/>
+          <include name="A03_T08"/>
+          <include name="A04_T01"/>
+          <include name="A07_T05"/>
         </methods>
-      </class> <!-- eWalker_SSL_VPN_V10.eWalker_SSL_VPN_iOS_launch -->
+      </class> <!-- eWalker_SSL_VPN_V10.eWalker_SSL_VPN_Android_launch -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

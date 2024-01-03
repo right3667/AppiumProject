@@ -10,10 +10,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import function.func_appium_ios;
-import function.func_selenium;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
+import resouce.func_appium_ios;
+import resouce.func_selenium;
 
 
 public class I05_T04 {
@@ -22,9 +22,15 @@ public class I05_T04 {
 	func_selenium web_func = new func_selenium();
 		
 	Date date_now = new Date(System.currentTimeMillis());
+
+	String server_ip = "172.16.150.21";
+	String server_port = "443";
+	String destination = "30.0.0.5";
+
+	String encryption_algorithm = "ARIA 256";
 	
 	public void I05_T04_case(IOSDriver<IOSElement> driver) {
-		
+		app_func.sleep(driver, 3);
 		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()) + " " + "TC I05_T04 실행");
 		
 		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
@@ -35,9 +41,6 @@ public class I05_T04 {
     	WebDriver webdriver = new ChromeDriver(options);
     	WebDriverWait wait = new WebDriverWait(webdriver, 10);
 		
-	    String encryption_algorithm = "ARIA 256";
-	    String server_ip = "172.16.150.20";
-	    
 	    web_func.login_manager(webdriver, server_ip);
 	    web_func.encryption_algorithm(webdriver, encryption_algorithm);
 	    web_func.logout_manager(webdriver);	    
@@ -45,13 +48,16 @@ public class I05_T04 {
 	    
 		app_func.sleep(driver, 3);
 		
-		if (app_func.connect_ping_chk(driver, "30.0.0.5") == 0) {
+		if (app_func.connect_ping_chk(driver, destination) == 0) {
 			assertTrue(false);
 		}
 		
 		app_func.start_app(driver, "com.soosanint.ewalker.vpn.v10", "btn info blue");
+		if (app_func.login_confirm(driver, "login") == 0) {
+			app_func.logout_server(driver);
+		}
 		
-		app_func.connect_server(driver, "172.16.150.21", "443");
+		app_func.connect_server(driver, server_ip, server_port);
 		
 		//로컬 사용자 로그인
 		app_func.login_server(driver, "default_user", "admin123!", 0, 0);
@@ -62,7 +68,7 @@ public class I05_T04 {
 			assertTrue(false);
 		}
 		
-		if (app_func.connect_ping_chk(driver, "30.0.0.5") == 0) {
+		if (app_func.connect_ping_chk(driver, destination) == 0) {
 		}
 		else {
 			assertTrue(false);
